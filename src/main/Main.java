@@ -1,5 +1,6 @@
 package main;
 
+import alerts.ExitAlert;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -12,30 +13,36 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-
-    private Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
-    private Pane pane = new Pane();
-    private Scene scene = new Scene(pane, bounds.getWidth() / 2, bounds.getHeight() / 2);
+    // Layout variables-------------------------------------------------------------------------------------------------
+    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+    private final Pane pane = new Pane();
+    private final Scene scene = new Scene(pane, bounds.getWidth(), bounds.getHeight());
     private Stage stage;
+    //------------------------------------------------------------------------------------------------------------------
 
     // Main method------------------------------------------------------------------------------------------------------
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Application.launch(args);
     }
     //------------------------------------------------------------------------------------------------------------------
 
     // Start method-----------------------------------------------------------------------------------------------------
-    public void start(Stage stage){
+    public void start(Stage stage) {
         this.stage = stage;
         layoutSetup();
     }
     //------------------------------------------------------------------------------------------------------------------
 
     // Layout setup method----------------------------------------------------------------------------------------------
-    private void layoutSetup(){
+    private void layoutSetup() {
+        scene.getStylesheets().add(getClass().getResource("CSS.css").toExternalForm());
         stage.setTitle("Roll Office");
         stage.setScene(scene);
         stage.show();
+        stage.setOnCloseRequest(e -> {
+            e.consume();
+            new ExitAlert();
+        });
     }
     //------------------------------------------------------------------------------------------------------------------
 }
