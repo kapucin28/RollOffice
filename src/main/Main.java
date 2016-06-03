@@ -35,6 +35,7 @@ public class Main extends Application {
 
     // Layout setup method----------------------------------------------------------------------------------------------
     private void layoutSetup() {
+        pane.getChildren().add(new Controller());
         scene.getStylesheets().add(getClass().getResource("CSS.css").toExternalForm());
         stage.setTitle("Roll Office");
         stage.setScene(scene);
