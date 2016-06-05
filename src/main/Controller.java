@@ -1,5 +1,7 @@
 package main;
 
+import chartsGraphics.BarChartGraphic;
+import chartsInfo.ChartsMasterInfo;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -38,15 +40,31 @@ class Controller extends Pane {
 
     // Constructor------------------------------------------------------------------------------------------------------
     Controller(){
-        rootSetup();
+        chartsLayoutSetup();
+        rootLayoutSetup();
     }
     //------------------------------------------------------------------------------------------------------------------
 
     // Root setup method------------------------------------------------------------------------------------------------
-    private void rootSetup(){
+    private void rootLayoutSetup(){
         root.add(chartsGrid, 0, 0);
         root.add(tablesGrid, 0, 1);
         getChildren().add(root);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Charts setup method----------------------------------------------------------------------------------------------
+    private void chartsLayoutSetup(){
+        chart1.setPrefHeight(bounds.getHeight() / 2);
+        chart1.setPrefWidth(bounds.getWidth() / 2);
+        chart1.setContent(new ChartsMasterInfo());
+        chart2.setPrefHeight(bounds.getHeight() / 2);
+        chart2.setPrefWidth(bounds.getWidth() / 2);
+        chart2.setContent(new BarChartGraphic());
+        chartsGrid.setPrefHeight(bounds.getHeight() / 2);
+        chartsGrid.setPrefWidth(bounds.getWidth());
+        chartsGrid.add(chart1, 0, 0);
+        chartsGrid.add(chart2, 1, 0);
     }
     //------------------------------------------------------------------------------------------------------------------
 }
