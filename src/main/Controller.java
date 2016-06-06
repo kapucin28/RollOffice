@@ -41,6 +41,7 @@ class Controller extends Pane {
     // Constructor------------------------------------------------------------------------------------------------------
     Controller(){
         chartsLayoutSetup();
+        tabsSetup();
         rootLayoutSetup();
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -65,6 +66,20 @@ class Controller extends Pane {
         chartsGrid.setPrefWidth(bounds.getWidth());
         chartsGrid.add(chart1, 0, 0);
         chartsGrid.add(chart2, 1, 0);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Tabs setup method------------------------------------------------------------------------------------------------
+    private void tabsSetup(){
+        tableMaster.setClosable(false);
+        table1.setClosable(false);
+        table2.setClosable(false);
+        table3.setClosable(false);
+        table4.setClosable(false);
+        tabPane.setPrefHeight(bounds.getHeight() / 2);
+        tabPane.setPrefWidth(bounds.getWidth());
+        tabPane.getTabs().addAll(tableMaster, table1, table2, table3, table4);
+        tablesGrid.add(tabPane, 0, 0);
     }
     //------------------------------------------------------------------------------------------------------------------
 }
