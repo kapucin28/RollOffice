@@ -9,6 +9,11 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
+import masterTable.MainMasterTable;
+import table1.MainTable1;
+import table2.MainTable2;
+import table3.MainTable3;
+import table4.MainTable4;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 02-Jun-16.
@@ -76,6 +81,11 @@ class Controller extends Pane {
         table2.setClosable(false);
         table3.setClosable(false);
         table4.setClosable(false);
+        tableMaster.setContent(new MainMasterTable());
+        table1.setContent(new MainTable1());
+        table2.setContent(new MainTable2());
+        table3.setContent(new MainTable3());
+        table4.setContent(new MainTable4());
         tabPane.setPrefHeight(bounds.getHeight() / 2);
         tabPane.setPrefWidth(bounds.getWidth());
         tabPane.getTabs().addAll(tableMaster, table1, table2, table3, table4);
