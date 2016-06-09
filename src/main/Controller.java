@@ -1,6 +1,6 @@
 package main;
 
-import chartsGraphics.BarChartGraphic;
+import chartsGraphics.*;
 import chartsInfo.ChartsMasterInfo;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Tab;
@@ -44,7 +44,8 @@ class Controller extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
-    Controller(){
+    Controller() {
+        updateChartSetup();
         chartsLayoutSetup();
         tabsSetup();
         rootLayoutSetup();
@@ -52,7 +53,7 @@ class Controller extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Root setup method------------------------------------------------------------------------------------------------
-    private void rootLayoutSetup(){
+    private void rootLayoutSetup() {
         root.add(chartsGrid, 0, 0);
         root.add(tablesGrid, 0, 1);
         getChildren().add(root);
@@ -60,7 +61,7 @@ class Controller extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Charts setup method----------------------------------------------------------------------------------------------
-    private void chartsLayoutSetup(){
+    private void chartsLayoutSetup() {
         chart1.setPrefHeight(bounds.getHeight() / 2);
         chart1.setPrefWidth(bounds.getWidth() / 2);
         chart1.setContent(new ChartsMasterInfo());
@@ -75,7 +76,7 @@ class Controller extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Tabs setup method------------------------------------------------------------------------------------------------
-    private void tabsSetup(){
+    private void tabsSetup() {
         tableMaster.setClosable(false);
         table1.setClosable(false);
         table2.setClosable(false);
@@ -90,6 +91,31 @@ class Controller extends Pane {
         tabPane.setPrefWidth(bounds.getWidth());
         tabPane.getTabs().addAll(tableMaster, table1, table2, table3, table4);
         tablesGrid.add(tabPane, 0, 0);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Selecting tabs method--------------------------------------------------------------------------------------------
+    private void updateChartSetup() {
+        tableMaster.setOnSelectionChanged(e -> {
+            chart1.setContent(new ChartsMasterInfo());
+            chart1.setText("Charts Master");
+        });
+        table1.setOnSelectionChanged(e -> {
+            chart1.setContent(new Table1PieChart());
+            chart1.setText("Table1 Chart");
+        });
+        table2.setOnSelectionChanged(e -> {
+            chart1.setContent(new Table2PieChart());
+            chart1.setText("Table2 Chart");
+        });
+        table3.setOnSelectionChanged(e -> {
+            chart1.setContent(new Table3PieChart());
+            chart1.setText("Table3 Chart");
+        });
+        table4.setOnSelectionChanged(e -> {
+            chart1.setContent(new Table4PieChart());
+            chart1.setText("Table4 Chart");
+        });
     }
     //------------------------------------------------------------------------------------------------------------------
 }
