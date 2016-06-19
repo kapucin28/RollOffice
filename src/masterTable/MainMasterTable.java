@@ -54,6 +54,16 @@ public class MainMasterTable extends Pane {
     private ObjectOutputStream toFile;
     //------------------------------------------------------------------------------------------------------------------
 
+    // Input variables--------------------------------------------------------------------------------------------------
+    private final TextField tfName = new TextField();
+    private final TextField tfSurname = new TextField();
+    private final TextField tfPost = new TextField();
+    private final TextField tfID = new TextField();
+    private final TextField tfTeam = new TextField();
+    private final Button addButton = new Button("Add");
+    private final Button removeButton = new Button("Remove");
+    //------------------------------------------------------------------------------------------------------------------
+
     // Constructor------------------------------------------------------------------------------------------------------
     public MainMasterTable(){
 
