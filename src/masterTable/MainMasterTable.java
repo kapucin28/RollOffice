@@ -90,6 +90,12 @@ public class MainMasterTable extends Pane {
         tfID.setPromptText("ID");
         tfTeam.setPromptText("Team");
         //--------------------------------------------------------------------------------------------------------------
+
+        // MenuBar layout-----------------------------------------------------------------------------------------------
+        fileMenu.getItems().addAll(saveTable, loadTable, separator, exit);
+        editMenu.getItems().addAll(refreshTable, clearTable);
+        menuBar.getMenus().addAll(fileMenu, editMenu);
+        //--------------------------------------------------------------------------------------------------------------
     }
     //------------------------------------------------------------------------------------------------------------------
 }
