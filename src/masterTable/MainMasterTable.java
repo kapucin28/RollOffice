@@ -96,6 +96,13 @@ public class MainMasterTable extends Pane {
         editMenu.getItems().addAll(refreshTable, clearTable);
         menuBar.getMenus().addAll(fileMenu, editMenu);
         //--------------------------------------------------------------------------------------------------------------
+
+        // TableView layout---------------------------------------------------------------------------------------------
+        tableView.setItems(list);
+        tableView.setPrefWidth(bounds.getWidth());
+        tableView.setPrefHeight(bounds.getHeight() / 2 - 120);
+        tableView.getColumns().addAll(nameColumn, surnameColumn, postColumn, IDColumn, teamColumn);
+        //--------------------------------------------------------------------------------------------------------------
     }
     //------------------------------------------------------------------------------------------------------------------
 }
