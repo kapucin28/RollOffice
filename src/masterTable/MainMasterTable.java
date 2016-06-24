@@ -2,6 +2,7 @@ package masterTable;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -107,6 +108,19 @@ public class MainMasterTable extends Pane {
         // TableGrid layout---------------------------------------------------------------------------------------------
         tableGrid.add(menuBar, 0, 0);
         tableGrid.add(tableView, 0, 1);
+        //--------------------------------------------------------------------------------------------------------------
+
+        // InputGrid layout---------------------------------------------------------------------------------------------
+        inputGrid.setVgap(10);
+        inputGrid.setHgap(30);
+        inputGrid.setPadding(new Insets(5, bounds.getHeight() / 3, 5, bounds.getHeight() / 3));
+        inputGrid.add(tfName, 0, 0);
+        inputGrid.add(tfSurname, 1, 0);
+        inputGrid.add(tfPost, 2, 0);
+        inputGrid.add(tfID, 3, 0);
+        inputGrid.add(tfTeam, 4, 0);
+        inputGrid.add(addButton, 5, 0);
+        inputGrid.add(removeButton, 6, 0);
         //--------------------------------------------------------------------------------------------------------------
     }
     //------------------------------------------------------------------------------------------------------------------
