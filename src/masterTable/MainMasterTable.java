@@ -5,11 +5,13 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.io.File;
 import java.io.ObjectInputStream;
@@ -79,6 +81,7 @@ public class MainMasterTable extends Pane {
     public MainMasterTable(){
         layoutSetup();
         tableSetup();
+        columnsSetup();
     }
     //------------------------------------------------------------------------------------------------------------------
 
@@ -142,4 +145,13 @@ public class MainMasterTable extends Pane {
     }
     //------------------------------------------------------------------------------------------------------------------
 
+    // TableColumns method----------------------------------------------------------------------------------------------
+    private void columnsSetup() {
+        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        surnameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        postColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        IDColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        teamColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+    }
+    //------------------------------------------------------------------------------------------------------------------
 }
