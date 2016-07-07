@@ -159,6 +159,12 @@ public class MainMasterTable extends Pane {
         postColumn.setCellValueFactory(new PropertyValueFactory<>(post));
         IDColumn.setCellValueFactory(new PropertyValueFactory<>(ID));
         teamColumn.setCellValueFactory(new PropertyValueFactory<>(team));
+
+        nameColumn.setOnEditCommit(this::nameColumnEdit);
+        surnameColumn.setOnEditCommit(this::surnameColumnEdit);
+        postColumn.setOnEditCommit(this::postColumnEdit);
+        IDColumn.setOnEditCommit(this::IDColumnEdit);
+        teamColumn.setOnEditCommit(this::teamColumnEdit);
     }
     //------------------------------------------------------------------------------------------------------------------
 }
