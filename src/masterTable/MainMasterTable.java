@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -152,6 +153,12 @@ public class MainMasterTable extends Pane {
         postColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         IDColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         teamColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>(name));
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>(surname));
+        postColumn.setCellValueFactory(new PropertyValueFactory<>(post));
+        IDColumn.setCellValueFactory(new PropertyValueFactory<>(ID));
+        teamColumn.setCellValueFactory(new PropertyValueFactory<>(team));
     }
     //------------------------------------------------------------------------------------------------------------------
 }
