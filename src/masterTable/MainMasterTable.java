@@ -2,6 +2,7 @@ package masterTable;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
@@ -165,6 +166,16 @@ public class MainMasterTable extends Pane {
         postColumn.setOnEditCommit(this::postColumnEdit);
         IDColumn.setOnEditCommit(this::IDColumnEdit);
         teamColumn.setOnEditCommit(this::teamColumnEdit);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Handling column edits methods------------------------------------------------------------------------------------
+    @SuppressWarnings("unchecked")
+    private void nameColumnEdit(Event e) {
+        TableColumn.CellEditEvent<Persons, String> cellEdit;
+        cellEdit = (TableColumn.CellEditEvent<Persons, String>) e;
+        Persons persons = cellEdit.getRowValue();
+        persons.setName(cellEdit.getNewValue());
     }
     //------------------------------------------------------------------------------------------------------------------
 }
