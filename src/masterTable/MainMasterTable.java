@@ -177,5 +177,13 @@ public class MainMasterTable extends Pane {
         Persons persons = cellEdit.getRowValue();
         persons.setName(cellEdit.getNewValue());
     }
+
+    @SuppressWarnings("unchecked")
+    private void surnameColumnEdit(Event e) {
+        TableColumn.CellEditEvent<Persons, String> cellEdit;
+        cellEdit = (TableColumn.CellEditEvent<Persons, String>) e;
+        Persons persons = cellEdit.getRowValue();
+        persons.setSurname(cellEdit.getNewValue());
+    }
     //------------------------------------------------------------------------------------------------------------------
 }
