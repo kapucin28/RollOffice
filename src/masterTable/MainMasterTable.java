@@ -193,5 +193,13 @@ public class MainMasterTable extends Pane {
         Persons persons = cellEdit.getRowValue();
         persons.setPost(cellEdit.getNewValue());
     }
+
+    @SuppressWarnings("unchecked")
+    private void IDColumnEdit(Event e) {
+        TableColumn.CellEditEvent<Persons, Integer> cellEdit;
+        cellEdit = (TableColumn.CellEditEvent<Persons, Integer>) e;
+        Persons persons = cellEdit.getRowValue();
+        persons.setID(cellEdit.getNewValue());
+    }
     //------------------------------------------------------------------------------------------------------------------
 }
