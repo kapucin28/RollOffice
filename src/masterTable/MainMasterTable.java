@@ -84,6 +84,7 @@ public class MainMasterTable extends Pane {
         layoutSetup();
         tableSetup();
         columnsSetup();
+        actionsPerformed();
     }
     //------------------------------------------------------------------------------------------------------------------
 
@@ -208,6 +209,18 @@ public class MainMasterTable extends Pane {
         cellEdit = (TableColumn.CellEditEvent<Persons, Integer>) e;
         Persons persons = cellEdit.getRowValue();
         persons.setTeam(cellEdit.getNewValue());
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Action methods setup---------------------------------------------------------------------------------------------
+    private void actionsPerformed() {
+        addMemberAction();
+        removeMemberAction();
+        refreshTableAction();
+        clearTableAction();
+        saveTableAction();
+        loadTableAction();
+        exitAction();
     }
     //------------------------------------------------------------------------------------------------------------------
 }
