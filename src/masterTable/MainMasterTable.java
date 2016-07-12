@@ -215,8 +215,8 @@ public class MainMasterTable extends Pane {
 
     // Action methods setup---------------------------------------------------------------------------------------------
     private void actionsPerformed() {
-        addMemberAction();
-        removeMemberAction();
+        addPersonAction();
+        removePersonAction();
         refreshTableAction();
         clearTableAction();
         saveTableAction();
@@ -243,6 +243,25 @@ public class MainMasterTable extends Pane {
     // Clear Table method-----------------------------------------------------------------------------------------------
     private void clearTableAction() {
         clearTable.setOnAction(e -> list.clear());
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Add members method-----------------------------------------------------------------------------------------------
+    private void addPersonAction() {
+        addButton.setOnAction(e -> {
+            Persons person = new Persons("", "", "", 0, 0);
+            person.setName(tfName.getText());
+            person.setSurname(tfSurname.getText());
+            person.setPost(tfPost.getText());
+            person.setID(Integer.parseInt(tfID.getText()));
+            person.setTeam(Integer.parseInt(tfTeam.getText()));
+            tableView.getItems().add(person);
+            tfName.clear();
+            tfSurname.clear();
+            tfPost.clear();
+            tfID.clear();
+            tfTeam.clear();
+        });
     }
     //------------------------------------------------------------------------------------------------------------------
 }
