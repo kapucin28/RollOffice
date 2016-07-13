@@ -246,7 +246,7 @@ public class MainMasterTable extends Pane {
     }
     //------------------------------------------------------------------------------------------------------------------
 
-    // Add members method-----------------------------------------------------------------------------------------------
+    // Add persons method-----------------------------------------------------------------------------------------------
     private void addPersonAction() {
         addButton.setOnAction(e -> {
             Persons person = new Persons("", "", "", 0, 0);
@@ -261,6 +261,17 @@ public class MainMasterTable extends Pane {
             tfPost.clear();
             tfID.clear();
             tfTeam.clear();
+        });
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Remove persons method--------------------------------------------------------------------------------------------
+    private void removePersonAction() {
+        removeButton.setOnAction(e -> {
+            ObservableList<Persons> selectedPerson, allDetails;
+            allDetails = tableView.getItems();
+            selectedPerson = tableView.getSelectionModel().getSelectedItems();
+            selectedPerson.forEach(allDetails::remove);
         });
     }
     //------------------------------------------------------------------------------------------------------------------
