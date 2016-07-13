@@ -1,6 +1,8 @@
 package masterTable;
 
+import alerts.EmptyAlert;
 import alerts.ExitAlert;
+import alerts.StreamAlert;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -16,12 +18,11 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
-import java.io.File;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 08-Jun-16.
+ *
  */
 public class MainMasterTable extends Pane {
 
@@ -272,6 +273,34 @@ public class MainMasterTable extends Pane {
             allDetails = tableView.getItems();
             selectedPerson = tableView.getSelectionModel().getSelectedItems();
             selectedPerson.forEach(allDetails::remove);
+        });
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Save table method------------------------------------------------------------------------------------------------
+    private void saveTableAction() {
+        saveTable.setOnAction(e -> {
+            fileStage = new Stage();
+            chooser = new FileChooser();
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            if (list.isEmpty()) {
+                new EmptyAlert();
+            } else {
+                file = chooser.showSaveDialog(fileStage);
+                try {
+                    toFile = new ObjectOutputStream(new FileOutputStream(file));
+                    for (Persons persons : list) {
+                        toFile.writeUTF(persons.getName());
+                        toFile.writeUTF(persons.getSurname());
+                        toFile.writeUTF(persons.getPost());
+                        toFile.writeInt(persons.getID());
+                        toFile.writeInt(persons.getTeam());
+                    }
+                    toFile.close();
+                } catch (IOException ex) {
+                    new StreamAlert();
+                }
+            }
         });
     }
     //------------------------------------------------------------------------------------------------------------------
