@@ -304,4 +304,29 @@ public class MainMasterTable extends Pane {
         });
     }
     //------------------------------------------------------------------------------------------------------------------
+
+    // Load table method------------------------------------------------------------------------------------------------
+    private void loadTableAction() {
+        loadTable.setOnAction(e -> {
+            fileStage = new Stage();
+            chooser = new FileChooser();
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            file = chooser.showOpenDialog(fileStage);
+            try {
+                fromFile = new ObjectInputStream(new FileInputStream(file));
+                while (file != null) {
+                    Persons persons = new Persons("", "", "", 0, 0);
+                    persons.setName(fromFile.readUTF());
+                    persons.setSurname(fromFile.readUTF());
+                    persons.setPost(fromFile.readUTF());
+                    persons.setID(fromFile.readInt());
+                    persons.setTeam(fromFile.readInt());
+                    tableView.getItems().add(persons);
+                }
+                fromFile.close();
+            } catch (IOException ignored) {
+            }
+        });
+    }
+    //------------------------------------------------------------------------------------------------------------------
 }
