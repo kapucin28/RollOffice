@@ -2,6 +2,9 @@ package masterTable;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 08-Jun-16.
+ *
+ *      The class that defines persons
+ * administrative information
  */
 public class Persons {
 
