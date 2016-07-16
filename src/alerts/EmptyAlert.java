@@ -7,6 +7,8 @@ import javafx.stage.StageStyle;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 10-Jun-16.
+ *
+ *      Empty alert thrown when tables are empty
  */
 public class EmptyAlert {
 
