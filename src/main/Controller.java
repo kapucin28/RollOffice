@@ -17,6 +17,9 @@ import table4.MainTable4;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 02-Jun-16.
+ *
+ *      This is the controller class where all the GUI
+ * are organised
  */
 class Controller extends Pane {
 
