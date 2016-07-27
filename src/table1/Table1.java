@@ -4,7 +4,7 @@ package table1;
  * Created by TIMBULI REMUS K@puc!n on 07-Jun-16.
  *
  *     This class represents persons details that
- * will be inserted in the table
+ * will be inserted in table 1
  */
 public class Table1 {
 }
