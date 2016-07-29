@@ -39,7 +39,43 @@ public class BarChartGraphic extends Pane{
 
     // Constructor------------------------------------------------------------------------------------------------------
     public BarChartGraphic(){
+        seriesSetup();
         paneSetup();
+        getChildren().add(pane);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Series setup method----------------------------------------------------------------------------------------------
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private void seriesSetup() {
+        series1.setName("2016");
+        series2.setName("2017");
+        series3.setName("2018");
+        series4.setName("Overall");
+
+        series1.getData().add(new XYChart.Data(year1, 1000));
+        series1.getData().add(new XYChart.Data(year2, 2000));
+        series1.getData().add(new XYChart.Data(year3, 3000));
+        series1.getData().add(new XYChart.Data(year4, 4000));
+        series1.getData().add(new XYChart.Data(total, 10000));
+
+        series2.getData().add(new XYChart.Data(year1, 4000));
+        series2.getData().add(new XYChart.Data(year2, 3000));
+        series2.getData().add(new XYChart.Data(year3, 2000));
+        series2.getData().add(new XYChart.Data(year4, 1000));
+        series2.getData().add(new XYChart.Data(total, 10000));
+
+        series3.getData().add(new XYChart.Data(year1, 1000));
+        series3.getData().add(new XYChart.Data(year2, 3000));
+        series3.getData().add(new XYChart.Data(year3, 1000));
+        series3.getData().add(new XYChart.Data(year4, 4000));
+        series3.getData().add(new XYChart.Data(total, 9000));
+
+        series4.getData().add(new XYChart.Data(year1, 5000));
+        series4.getData().add(new XYChart.Data(year2, 4000));
+        series4.getData().add(new XYChart.Data(year3, 4000));
+        series4.getData().add(new XYChart.Data(year4, 5000));
+        series4.getData().add(new XYChart.Data(total, 18000));
     }
     //------------------------------------------------------------------------------------------------------------------
 
