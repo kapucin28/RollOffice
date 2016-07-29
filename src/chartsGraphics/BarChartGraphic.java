@@ -39,7 +39,20 @@ public class BarChartGraphic extends Pane{
 
     // Constructor------------------------------------------------------------------------------------------------------
     public BarChartGraphic(){
+        paneSetup();
+    }
+    //------------------------------------------------------------------------------------------------------------------
 
+    // Pane setup method------------------------------------------------------------------------------------------------
+    private void paneSetup() {
+        barChart.setPrefWidth(bounds.getWidth() / 2);
+        barChart.setTitle("Performance");
+        xAxis.setLabel("Teams");
+        yAxis.setLabel("Performance");
+        barChart.getData().addAll(series1, series2, series3, series4);
+        pane.setPrefWidth(bounds.getWidth() / 2);
+        pane.setPrefHeight(bounds.getHeight() / 2);
+        pane.getChildren().add(barChart);
     }
     //------------------------------------------------------------------------------------------------------------------
 }
