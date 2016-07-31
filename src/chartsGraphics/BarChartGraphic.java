@@ -1,5 +1,8 @@
 package chartsGraphics;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -7,6 +10,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
+import javafx.util.Duration;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 05-Jun-16.
@@ -39,9 +43,26 @@ public class BarChartGraphic extends Pane{
 
     // Constructor------------------------------------------------------------------------------------------------------
     public BarChartGraphic(){
+        chartAnimation();
         seriesSetup();
         paneSetup();
         getChildren().add(pane);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Chart animation method-------------------------------------------------------------------------------------------
+    private void chartAnimation() {
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), e -> {
+            for (XYChart.Series<String, Number> series : barChart.getData()) {
+                for (XYChart.Data<String, Number> data : series.getData()) {
+                    data.setYValue(Math.random() * 1000);
+                }
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.setAutoReverse(true);
+        timeline.play();
     }
     //------------------------------------------------------------------------------------------------------------------
 

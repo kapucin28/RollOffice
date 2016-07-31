@@ -23,7 +23,7 @@ import java.io.*;
 /**
  * Created by TIMBULI REMUS K@puc!n on 08-Jun-16.
  *
- *      Master table in witch the administrative information
+ *      Master table in which the administrative information
  *  is stored by the user
  */
 public class MainMasterTable extends Pane {
