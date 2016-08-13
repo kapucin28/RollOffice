@@ -10,10 +10,24 @@ import java.util.GregorianCalendar;
  */
 public class Table2 {
 
-    // Team1 variables--------------------------------------------------------------------------------------------------
+    // Team2 variables--------------------------------------------------------------------------------------------------
     private GregorianCalendar calendar = new GregorianCalendar();
     private String post;
     private long scrap, pending, output, target, month, year;
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Constructor------------------------------------------------------------------------------------------------------
+    public Table2(String post, long scrap, long pending, long output, long target, long month, long year) {
+        year = calendar.get(GregorianCalendar.YEAR);
+        month = calendar.get(GregorianCalendar.MONTH);
+        this.post = post;
+        this.scrap = scrap;
+        this.pending = pending;
+        this.output = output;
+        this.target = target;
+        this.month = month;
+        this.year = year;
+    }
     //------------------------------------------------------------------------------------------------------------------
 
 }
