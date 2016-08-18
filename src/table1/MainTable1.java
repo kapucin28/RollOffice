@@ -1,9 +1,8 @@
 package table1;
 
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
 /**
@@ -38,6 +37,18 @@ public class MainTable1 extends Pane {
     private final MenuItem clearTable = new MenuItem("Clear Table");
     private final MenuItem exit = new MenuItem("Exit");
     private final SeparatorMenuItem separator = new SeparatorMenuItem();
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Table variables--------------------------------------------------------------------------------------------------
+    private final TableView<Table1> tableView = new TableView<>();
+    private final TableColumn<Table1, String> postColumn = new TableColumn<>("Post");
+    private final TableColumn<Table1, Long> scrapColumn = new TableColumn<>("Scrap");
+    private final TableColumn<Table1, Long> pendingColumn = new TableColumn<>("Pending");
+    private final TableColumn<Table1, Long> outputColumn = new TableColumn<>("Output");
+    private final TableColumn<Table1, Long> targetColumn = new TableColumn<>("Target");
+    private final TableColumn<Table1, Long> monthColumn = new TableColumn<>("Month");
+    private final TableColumn<Table1, Long> yearColumn = new TableColumn<>("Year");
+    private ObservableList<Table1> list = FXCollections.observableArrayList();
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
