@@ -81,11 +81,20 @@ public class MainTable1 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Layout setup-----------------------------------------------------------------------------------------------------
+    @SuppressWarnings("unchecked")
     private void layoutSetup(){
         // MenuBar layout-----------------------------------------------------------------------------------------------
         fileMenu.getItems().addAll(saveTable, loadTable, separator, exit);
         editMenu.getItems().addAll(refreshTable, clearTable);
         menuBar.getMenus().addAll(fileMenu, editMenu);
+        //--------------------------------------------------------------------------------------------------------------
+
+        // TableView layout---------------------------------------------------------------------------------------------
+        tableView.setItems(list);
+        tableView.setPrefHeight(bounds.getHeight() / 2);
+        tableView.setPrefWidth(bounds.getWidth());
+        tableView.getColumns().addAll(postColumn, scrapColumn, pendingColumn,
+                outputColumn, targetColumn, monthColumn, yearColumn);
         //--------------------------------------------------------------------------------------------------------------
     }
     //------------------------------------------------------------------------------------------------------------------
