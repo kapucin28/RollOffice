@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -129,7 +130,16 @@ public class MainTable1 extends Pane {
         pendingColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
         outputColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
         targetColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        monthColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
         yearColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+
+        postColumn.setCellValueFactory(new PropertyValueFactory<>(post));
+        scrapColumn.setCellValueFactory(new PropertyValueFactory<>(scrap));
+        pendingColumn.setCellValueFactory(new PropertyValueFactory<>(pending));
+        outputColumn.setCellValueFactory(new PropertyValueFactory<>(output));
+        targetColumn.setCellValueFactory(new PropertyValueFactory<>(target));
+        monthColumn.setCellValueFactory(new PropertyValueFactory<>(month));
+        yearColumn.setCellValueFactory(new PropertyValueFactory<>(year));
     }
     //------------------------------------------------------------------------------------------------------------------
 }
