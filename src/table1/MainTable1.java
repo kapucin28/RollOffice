@@ -82,6 +82,7 @@ public class MainTable1 extends Pane {
         layoutSetup();
         tableSetup();
         columnsSetup();
+        actionsPerformed();
     }
     //------------------------------------------------------------------------------------------------------------------
 
@@ -140,6 +141,12 @@ public class MainTable1 extends Pane {
         targetColumn.setCellValueFactory(new PropertyValueFactory<>(target));
         monthColumn.setCellValueFactory(new PropertyValueFactory<>(month));
         yearColumn.setCellValueFactory(new PropertyValueFactory<>(year));
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Actions method setup---------------------------------------------------------------------------------------------
+    private void actionsPerformed(){
+
     }
     //------------------------------------------------------------------------------------------------------------------
 }
