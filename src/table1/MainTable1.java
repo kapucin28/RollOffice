@@ -1,5 +1,6 @@
 package table1;
 
+import alerts.ExitAlert;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
@@ -146,7 +147,16 @@ public class MainTable1 extends Pane {
 
     // Actions method setup---------------------------------------------------------------------------------------------
     private void actionsPerformed(){
+        exitAction();
+    }
+    //------------------------------------------------------------------------------------------------------------------
 
+    // Exit program method----------------------------------------------------------------------------------------------
+    private void exitAction(){
+        exit.setOnAction(e ->{
+            e.consume();
+            new ExitAlert();
+        });
     }
     //------------------------------------------------------------------------------------------------------------------
 }
