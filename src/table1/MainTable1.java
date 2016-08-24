@@ -148,6 +148,7 @@ public class MainTable1 extends Pane {
     // Actions method setup---------------------------------------------------------------------------------------------
     private void actionsPerformed(){
         refreshTableAction();
+        clearTableAction();
         exitAction();
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -164,6 +165,12 @@ public class MainTable1 extends Pane {
     // Refresh table method---------------------------------------------------------------------------------------------
     private void refreshTableAction(){
         refreshTable.setOnAction(e -> tableView.refresh());
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Clear table method-----------------------------------------------------------------------------------------------
+    private void clearTableAction(){
+        clearTable.setOnAction(e -> list.clear());
     }
     //------------------------------------------------------------------------------------------------------------------
 }
