@@ -1,6 +1,8 @@
 package table1;
 
+import alerts.EmptyAlert;
 import alerts.ExitAlert;
+import alerts.StreamAlert;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
@@ -14,14 +16,12 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.converter.LongStringConverter;
 
-import java.io.File;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 07-Jun-16.
- *
- *      This class represents the table for
+ * <p>
+ * This class represents the table for
  * team 1
  */
 public class MainTable1 extends Pane {
@@ -79,7 +79,7 @@ public class MainTable1 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
-    public MainTable1(){
+    public MainTable1() {
         layoutSetup();
         tableSetup();
         columnsSetup();
@@ -89,7 +89,7 @@ public class MainTable1 extends Pane {
 
     // Layout setup-----------------------------------------------------------------------------------------------------
     @SuppressWarnings("unchecked")
-    private void layoutSetup(){
+    private void layoutSetup() {
         // MenuBar layout-----------------------------------------------------------------------------------------------
         fileMenu.getItems().addAll(saveTable, loadTable, separator, exit);
         editMenu.getItems().addAll(refreshTable, clearTable);
@@ -126,7 +126,7 @@ public class MainTable1 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // TableColumns setup method---------------------------------------------------------------------------------------
-    private void columnsSetup(){
+    private void columnsSetup() {
         postColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         scrapColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
         pendingColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
@@ -146,7 +146,7 @@ public class MainTable1 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Actions method setup---------------------------------------------------------------------------------------------
-    private void actionsPerformed(){
+    private void actionsPerformed() {
         saveTableAction();
         refreshTableAction();
         clearTableAction();
@@ -155,8 +155,8 @@ public class MainTable1 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Exit program method----------------------------------------------------------------------------------------------
-    private void exitAction(){
-        exit.setOnAction(e ->{
+    private void exitAction() {
+        exit.setOnAction(e -> {
             e.consume();
             new ExitAlert();
         });
@@ -164,23 +164,43 @@ public class MainTable1 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Refresh table method---------------------------------------------------------------------------------------------
-    private void refreshTableAction(){
+    private void refreshTableAction() {
         refreshTable.setOnAction(e -> tableView.refresh());
     }
     //------------------------------------------------------------------------------------------------------------------
 
     // Clear table method-----------------------------------------------------------------------------------------------
-    private void clearTableAction(){
+    private void clearTableAction() {
         clearTable.setOnAction(e -> list.clear());
     }
     //------------------------------------------------------------------------------------------------------------------
 
     // Save table method------------------------------------------------------------------------------------------------
-    private void saveTableAction(){
-        saveTable.setOnAction(e ->{
+    private void saveTableAction() {
+        saveTable.setOnAction(e -> {
             fileStage = new Stage();
             chooser = new FileChooser();
             chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            if (list.isEmpty()) {
+                new EmptyAlert();
+            } else {
+                file = chooser.showSaveDialog(fileStage);
+                try {
+                    toFile = new ObjectOutputStream(new FileOutputStream(file));
+                    for (Table1 table1:list){
+                        toFile.writeUTF(table1.getPost());
+                        toFile.writeLong(table1.getScrap());
+                        toFile.writeLong(table1.getPending());
+                        toFile.writeLong(table1.getOutput());
+                        toFile.writeLong(table1.getTarget());
+                        toFile.writeLong(table1.getMonth());
+                        toFile.writeLong(table1.getYear());
+                    }
+                    toFile.close();
+                }catch (IOException e1){
+                    new StreamAlert();
+                }
+            }
         });
     }
     //------------------------------------------------------------------------------------------------------------------
