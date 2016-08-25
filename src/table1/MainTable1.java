@@ -147,6 +147,7 @@ public class MainTable1 extends Pane {
 
     // Actions method setup---------------------------------------------------------------------------------------------
     private void actionsPerformed(){
+        saveTableAction();
         refreshTableAction();
         clearTableAction();
         exitAction();
@@ -171,6 +172,16 @@ public class MainTable1 extends Pane {
     // Clear table method-----------------------------------------------------------------------------------------------
     private void clearTableAction(){
         clearTable.setOnAction(e -> list.clear());
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Save table method------------------------------------------------------------------------------------------------
+    private void saveTableAction(){
+        saveTable.setOnAction(e ->{
+            fileStage = new Stage();
+            chooser = new FileChooser();
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+        });
     }
     //------------------------------------------------------------------------------------------------------------------
 }
