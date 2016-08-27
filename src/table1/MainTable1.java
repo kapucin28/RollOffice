@@ -218,6 +218,7 @@ public class MainTable1 extends Pane {
                     table1.setPending(fromFile.readLong());
                     table1.setOutput(fromFile.readLong());
                     table1.setTarget(fromFile.readLong());
+                    table1.setMonth(fromFile.readLong());
                     table1.setYear(fromFile.readLong());
                     tableView.getItems().add(table1);
                 }
