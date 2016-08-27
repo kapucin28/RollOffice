@@ -148,6 +148,7 @@ public class MainTable1 extends Pane {
     // Actions method setup---------------------------------------------------------------------------------------------
     private void actionsPerformed() {
         saveTableAction();
+        loadTableAction();
         refreshTableAction();
         clearTableAction();
         exitAction();
@@ -201,6 +202,17 @@ public class MainTable1 extends Pane {
                     new StreamAlert();
                 }
             }
+        });
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Load table method------------------------------------------------------------------------------------------------
+    private void loadTableAction(){
+        loadTable.setOnAction(e ->{
+            fileStage = new Stage();
+            chooser = new FileChooser();
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            file = chooser.showOpenDialog(fileStage);
         });
     }
     //------------------------------------------------------------------------------------------------------------------
