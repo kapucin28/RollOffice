@@ -26,10 +26,6 @@ import java.io.*;
  */
 public class MainTable1 extends Pane {
 
-    // Random test variables--------------------------------------------------------------------------------------------
-    private Table1 table1 = new Table1("", 0, 0, 0, 0, 0, 0);
-    //------------------------------------------------------------------------------------------------------------------
-
     // Persons details variables----------------------------------------------------------------------------------------
     private final String post = "post";
     private final String scrap = "scrap";
@@ -188,7 +184,7 @@ public class MainTable1 extends Pane {
                 file = chooser.showSaveDialog(fileStage);
                 try {
                     toFile = new ObjectOutputStream(new FileOutputStream(file));
-                    for (Table1 table1:list){
+                    for (Table1 table1 : list) {
                         toFile.writeUTF(table1.getPost());
                         toFile.writeLong(table1.getScrap());
                         toFile.writeLong(table1.getPending());
@@ -198,7 +194,7 @@ public class MainTable1 extends Pane {
                         toFile.writeLong(table1.getYear());
                     }
                     toFile.close();
-                }catch (IOException e1){
+                } catch (IOException e1) {
                     new StreamAlert();
                 }
             }
@@ -207,37 +203,28 @@ public class MainTable1 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Load table method------------------------------------------------------------------------------------------------
-    private void loadTableAction(){
-        loadTable.setOnAction(e ->{
+    private void loadTableAction() {
+        loadTable.setOnAction(e -> {
             fileStage = new Stage();
             chooser = new FileChooser();
             chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
             file = chooser.showOpenDialog(fileStage);
+            try {
+                fromFile = new ObjectInputStream(new FileInputStream(file));
+                while (file != null) {
+                    Table1 table1 = new Table1("", 0, 0, 0, 0, 0, 0);
+                    table1.setPost(fromFile.readUTF());
+                    table1.setScrap(fromFile.readLong());
+                    table1.setPending(fromFile.readLong());
+                    table1.setOutput(fromFile.readLong());
+                    table1.setTarget(fromFile.readLong());
+                    table1.setYear(fromFile.readLong());
+                    tableView.getItems().add(table1);
+                }
+                fromFile.close();
+            } catch (IOException ignored) {
+            }
         });
     }
     //------------------------------------------------------------------------------------------------------------------
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
