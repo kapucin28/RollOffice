@@ -83,6 +83,16 @@ public class MainTable2 extends Pane{
         editMenu.getItems().addAll(refreshTable, clearTable);
         menuBar.getMenus().addAll(fileMenu, editMenu);
         //--------------------------------------------------------------------------------------------------------------
+
+        // TableView layout---------------------------------------------------------------------------------------------
+        tableView.setItems(list);
+        tableView.setPrefHeight(bounds.getHeight() / 2);
+        tableView.setPrefWidth(bounds.getWidth());
+        //noinspection unchecked
+        tableView.getColumns().addAll(postColumn, scrapColumn, pendingColumn,
+                outputColumn, targetColumn, monthColumn, yearColumn);
+        //--------------------------------------------------------------------------------------------------------------
+
     }
     //------------------------------------------------------------------------------------------------------------------
 }
