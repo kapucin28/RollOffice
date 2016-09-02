@@ -4,11 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.converter.LongStringConverter;
 
 import java.io.File;
 import java.io.ObjectInputStream;
@@ -74,6 +76,7 @@ public class MainTable2 extends Pane{
     public MainTable2(){
         layoutSetup();
         tableSetup();
+        columnsSetup();
     }
     //------------------------------------------------------------------------------------------------------------------
 
@@ -112,6 +115,18 @@ public class MainTable2 extends Pane{
     private void tableSetup() {
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // TableColumns setup method---------------------------------------------------------------------------------------
+    private void columnsSetup() {
+        postColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        scrapColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        pendingColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        outputColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        targetColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        monthColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        yearColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
     }
     //------------------------------------------------------------------------------------------------------------------
 }
