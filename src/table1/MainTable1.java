@@ -26,7 +26,7 @@ import java.io.*;
  */
 public class MainTable1 extends Pane {
 
-    // Persons details variables----------------------------------------------------------------------------------------
+    // Persons details constants----------------------------------------------------------------------------------------
     private final String post = "post";
     private final String scrap = "scrap";
     private final String pending = "pending";
@@ -36,7 +36,7 @@ public class MainTable1 extends Pane {
     private final String year = "year";
     //------------------------------------------------------------------------------------------------------------------
 
-    // Menu variables---------------------------------------------------------------------------------------------------
+    // Menu constants---------------------------------------------------------------------------------------------------
     private final MenuBar menuBar = new MenuBar();
     private final Menu fileMenu = new Menu("_File");
     private final Menu editMenu = new Menu("_Edit");
