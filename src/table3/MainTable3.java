@@ -10,7 +10,19 @@ import javafx.scene.layout.Pane;
  */
 public class MainTable3 extends Pane{
 
+    // Persons details variables----------------------------------------------------------------------------------------
+    private final String post = "post";
+    private final String scrap = "scrap";
+    private final String pending = "pending";
+    private final String output = "output";
+    private final String target = "target";
+    private final String month = "month";
+    private final String year = "year";
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Constructor------------------------------------------------------------------------------------------------------
     public MainTable3(){
 
     }
+    //------------------------------------------------------------------------------------------------------------------
 }
