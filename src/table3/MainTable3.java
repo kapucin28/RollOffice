@@ -2,9 +2,12 @@ package table3;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -59,6 +62,12 @@ public class MainTable3 extends Pane{
     private Stage fileStage;
     private ObjectInputStream fromFile;
     private ObjectOutputStream toFile;
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Panes variables--------------------------------------------------------------------------------------------------
+    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+    private final GridPane root = new GridPane();
+    private final GridPane tableGrid = new GridPane();
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
