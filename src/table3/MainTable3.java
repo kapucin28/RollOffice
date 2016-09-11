@@ -4,11 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.converter.LongStringConverter;
 
 import java.io.File;
 import java.io.ObjectInputStream;
@@ -16,11 +18,11 @@ import java.io.ObjectOutputStream;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 07-Jun-16.
- *
- *      This class represents the table for
+ * <p>
+ * This class represents the table for
  * team 3
  */
-public class MainTable3 extends Pane{
+public class MainTable3 extends Pane {
 
     // Persons details constants----------------------------------------------------------------------------------------
     private final String post = "post";
@@ -71,9 +73,10 @@ public class MainTable3 extends Pane{
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
-    public MainTable3(){
+    public MainTable3() {
         layoutSetup();
         tableSetup();
+        columnsSetup();
     }
     //------------------------------------------------------------------------------------------------------------------
 
@@ -115,4 +118,15 @@ public class MainTable3 extends Pane{
     }
     //------------------------------------------------------------------------------------------------------------------
 
+    // TableColumns setup method---------------------------------------------------------------------------------------
+    private void columnsSetup() {
+        postColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        scrapColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        pendingColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        outputColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        targetColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        monthColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+        yearColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
+    }
+    //------------------------------------------------------------------------------------------------------------------
 }
