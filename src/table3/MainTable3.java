@@ -1,6 +1,8 @@
 package table3;
 
+import alerts.EmptyAlert;
 import alerts.ExitAlert;
+import alerts.StreamAlert;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
@@ -13,10 +15,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.converter.LongStringConverter;
+import table2.Table2;
 
-import java.io.File;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 07-Jun-16.
@@ -178,6 +179,26 @@ public class MainTable3 extends Pane {
             fileStage = new Stage();
             chooser = new FileChooser();
             chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            if (list.isEmpty()) {
+                new EmptyAlert();
+            } else {
+                file = chooser.showSaveDialog(fileStage);
+                try {
+                    toFile = new ObjectOutputStream(new FileOutputStream(file));
+                    for (Table3 table3 : list) {
+                        toFile.writeUTF(table3.getPost());
+                        toFile.writeLong(table3.getScrap());
+                        toFile.writeLong(table3.getPending());
+                        toFile.writeLong(table3.getOutput());
+                        toFile.writeLong(table3.getTarget());
+                        toFile.writeLong(table3.getMonth());
+                        toFile.writeLong(table3.getYear());
+                    }
+                    toFile.close();
+                } catch (IOException e1) {
+                    new StreamAlert();
+                }
+            }
         });
     }
     //------------------------------------------------------------------------------------------------------------------
