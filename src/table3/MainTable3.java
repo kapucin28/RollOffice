@@ -210,6 +210,22 @@ public class MainTable3 extends Pane {
             chooser = new FileChooser();
             chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
             file = chooser.showOpenDialog(fileStage);
+            try {
+                fromFile = new ObjectInputStream(new FileInputStream(file));
+                while (file != null) {
+                    Table3 table3 = new Table3("", 0, 0, 0, 0, 0, 0);
+                    table3.setPost(fromFile.readUTF());
+                    table3.setScrap(fromFile.readLong());
+                    table3.setPending(fromFile.readLong());
+                    table3.setOutput(fromFile.readLong());
+                    table3.setTarget(fromFile.readLong());
+                    table3.setMonth(fromFile.readLong());
+                    table3.setYear(fromFile.readLong());
+                    tableView.getItems().add(table3);
+                }
+                fromFile.close();
+            } catch (IOException ignored) {
+            }
         });
     }
     //------------------------------------------------------------------------------------------------------------------
