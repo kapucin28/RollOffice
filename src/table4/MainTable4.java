@@ -4,6 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 07-Jun-16.
@@ -45,6 +51,14 @@ public class MainTable4 extends Pane{
     private final TableColumn<Table4, Long> monthColumn = new TableColumn<>("Month");
     private final TableColumn<Table4, Long> yearColumn = new TableColumn<>("Year");
     private ObservableList<Table4> list = FXCollections.observableArrayList();
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Load & Save table variables--------------------------------------------------------------------------------------
+    private FileChooser chooser;
+    private File file;
+    private Stage fileStage;
+    private ObjectInputStream fromFile;
+    private ObjectOutputStream toFile;
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
