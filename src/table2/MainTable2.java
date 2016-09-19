@@ -68,7 +68,7 @@ public class MainTable2 extends Pane {
     private ObjectOutputStream toFile;
     //------------------------------------------------------------------------------------------------------------------
 
-    // Panes variables--------------------------------------------------------------------------------------------------
+    // Panes constants--------------------------------------------------------------------------------------------------
     private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final GridPane root = new GridPane();
     private final GridPane tableGrid = new GridPane();
