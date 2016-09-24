@@ -139,4 +139,15 @@ public class MainTable4 extends Pane {
         yearColumn.setCellValueFactory(new PropertyValueFactory<>(year));
     }
     //------------------------------------------------------------------------------------------------------------------
+
+    // Actions method setup---------------------------------------------------------------------------------------------
+    private void actionsPerformed() {
+        saveTableAction();
+        loadTableAction();
+        refreshTableAction();
+        clearTableAction();
+        exitAction();
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
 }
