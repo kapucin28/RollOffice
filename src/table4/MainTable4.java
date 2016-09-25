@@ -172,4 +172,13 @@ public class MainTable4 extends Pane {
     }
     //------------------------------------------------------------------------------------------------------------------
 
+    // Save table method------------------------------------------------------------------------------------------------
+    private void saveTableAction() {
+        saveTable.setOnAction(e -> {
+            fileStage = new Stage();
+            chooser = new FileChooser();
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+        });
+    }
+    //------------------------------------------------------------------------------------------------------------------
 }
