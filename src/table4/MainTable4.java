@@ -202,4 +202,15 @@ public class MainTable4 extends Pane {
         });
     }
     //------------------------------------------------------------------------------------------------------------------
+
+    // Load table method------------------------------------------------------------------------------------------------
+    private void loadTableAction() {
+        loadTable.setOnAction(e -> {
+            fileStage = new Stage();
+            chooser = new FileChooser();
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            file = chooser.showOpenDialog(fileStage);
+        });
+    }
+    //------------------------------------------------------------------------------------------------------------------
 }
