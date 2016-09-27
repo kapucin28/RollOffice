@@ -15,7 +15,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.converter.LongStringConverter;
-import table1.Table1;
 
 import java.io.*;
 

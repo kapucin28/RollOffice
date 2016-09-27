@@ -14,11 +14,11 @@ import javafx.util.Duration;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 05-Jun-16.
- *
- *      This is the chart that will display
+ * <p>
+ * This is the chart that will display
  * combined results from all pie charts
  */
-public class BarChartGraphic extends Pane{
+public class BarChartGraphic extends Pane {
 
     // Pane variables---------------------------------------------------------------------------------------------------
     private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
@@ -42,7 +42,7 @@ public class BarChartGraphic extends Pane{
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
-    public BarChartGraphic(){
+    public BarChartGraphic() {
         chartAnimation();
         seriesSetup();
         paneSetup();

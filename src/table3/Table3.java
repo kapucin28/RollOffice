@@ -4,8 +4,8 @@ import java.util.GregorianCalendar;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 07-Jun-16.
- *
- *     This class represents performance details that
+ * <p>
+ * This class represents performance details that
  * will be inserted in table 3
  */
 public class Table3 {

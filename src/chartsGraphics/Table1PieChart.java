@@ -4,13 +4,13 @@ import javafx.scene.layout.Pane;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 09-Jun-16.
- *
- *      This chart will represent the performance
+ * <p>
+ * This chart will represent the performance
  * from team 1
  */
 public class Table1PieChart extends Pane {
 
-    public Table1PieChart(){
+    public Table1PieChart() {
 
     }
 }

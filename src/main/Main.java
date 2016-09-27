@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 01-Jun-16.
- *
- *      The main class where all the objects are
+ * <p>
+ * The main class where all the objects are
  * displayed on stage
  */
 public class Main extends Application {
