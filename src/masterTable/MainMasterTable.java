@@ -1,21 +1,13 @@
 package masterTable;
 
-import alerts.EmptyAlert;
-import alerts.ExitAlert;
-import alerts.StreamAlert;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import alerts.*;
+import javafx.collections.*;
 import javafx.event.Event;
-import javafx.geometry.Insets;
-import javafx.geometry.Rectangle2D;
+import javafx.geometry.*;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
+import javafx.scene.control.cell.*;
+import javafx.scene.layout.*;
+import javafx.stage.*;
 import javafx.util.converter.IntegerStringConverter;
 
 import java.io.*;

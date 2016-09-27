@@ -1,9 +1,7 @@
 package alerts;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.stage.Modality;
-import javafx.stage.StageStyle;
+import javafx.scene.control.*;
+import javafx.stage.*;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 11-Jun-16.
