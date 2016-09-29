@@ -1,6 +1,8 @@
 package chartsGraphics;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.layout.Pane;
+import javafx.stage.Screen;
 import table1.Table1;
 
 /**
@@ -17,6 +19,11 @@ public class Table1PieChart extends Pane {
     private long pending = table1.getPending();
     private long output = table1.getOutput();
     private long target = table1.getTarget();
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Chart variables--------------------------------------------------------------------------------------------------
+    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+    private final Pane pane = new Pane();
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
