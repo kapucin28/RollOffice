@@ -1,5 +1,6 @@
 package chartsGraphics;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -69,6 +70,9 @@ public class Table1PieChart extends Pane {
                 data.setPieValue(Math.random() * 1000);
             }
         }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.setAutoReverse(true);
+        timeline.play();
     }
     //------------------------------------------------------------------------------------------------------------------
 
