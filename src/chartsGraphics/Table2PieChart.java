@@ -13,6 +13,10 @@ public class Table2PieChart extends Pane {
 
     // Table 2 variables------------------------------------------------------------------------------------------------
     private Table2 table2 = new Table2("", 0, 0, 0, 0, 0, 0);
+    private long scrap = table2.getScrap();
+    private long pending = table2.getPending();
+    private long output = table2.getOutput();
+    private long target = table2.getTarget();
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
