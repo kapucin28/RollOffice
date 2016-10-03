@@ -21,7 +21,7 @@ import table1.Table1;
  */
 public class Table1PieChart extends Pane {
 
-    // Table 1 variable--------------------------------------------------------------------------------------------------
+    // Table 1 variables------------------------------------------------------------------------------------------------
     private Table1 table1 = new Table1("", 0, 0, 0, 0, 0, 0);
     private long scrap = table1.getScrap();
     private long pending = table1.getPending();
