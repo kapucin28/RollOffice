@@ -27,6 +27,10 @@ public class Table2PieChart extends Pane {
     // Chart variables--------------------------------------------------------------------------------------------------
     private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final Pane pane = new Pane();
+    private PieChart.Data scrapSlice = new PieChart.Data("Scrap", scrap);
+    private PieChart.Data pendingSlice = new PieChart.Data("Pending", pending);
+    private PieChart.Data outputSlice = new PieChart.Data("Output", output);
+    private PieChart.Data targetSlice = new PieChart.Data("Target", target);
 
     private ObservableList<PieChart.Data> pie = FXCollections.observableArrayList();
     private PieChart chart = new PieChart(pie);
