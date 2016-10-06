@@ -51,6 +51,10 @@ public class Table2PieChart extends Pane {
         chart.setPrefHeight(bounds.getHeight() / 2 - 30);
         chart.setLegendSide(Side.LEFT);
         chart.setTitle("Performance");
+        pane.setPrefWidth(bounds.getWidth() / 2);
+        pane.setPrefHeight(bounds.getHeight() / 2);
+        pane.getChildren().add(chart);
+        getChildren().add(pane);
     }
     //------------------------------------------------------------------------------------------------------------------
 
