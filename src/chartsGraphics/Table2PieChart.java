@@ -1,5 +1,7 @@
 package chartsGraphics;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
@@ -7,6 +9,7 @@ import javafx.geometry.Side;
 import javafx.scene.chart.PieChart;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
+import javafx.util.Duration;
 import table2.Table2;
 
 /**
@@ -55,6 +58,17 @@ public class Table2PieChart extends Pane {
         pane.setPrefHeight(bounds.getHeight() / 2);
         pane.getChildren().add(chart);
         getChildren().add(pane);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Chart Animation method-------------------------------------------------------------------------------------------
+    private void chartAnimation() {
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), e -> {
+            for (PieChart.Data data : chart.getData()) {
+                data.setPieValue(Math.random() * 1000);
+            }
+        }));
     }
     //------------------------------------------------------------------------------------------------------------------
 
