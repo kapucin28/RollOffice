@@ -12,7 +12,11 @@ import table3.Table3;
 public class Table3PieChart extends Pane {
 
     // Team 3 variable--------------------------------------------------------------------------------------------------
-    private Table3 team3 = new Table3("", 0, 0, 0, 0, 0, 0);
+    private Table3 table3 = new Table3("", 0, 0, 0, 0, 0, 0);
+    private long scrap = table3.getScrap();
+    private long pending = table3.getPending();
+    private long output = table3.getOutput();
+    private long target = table3.getTarget();
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
