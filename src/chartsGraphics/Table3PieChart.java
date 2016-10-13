@@ -21,7 +21,7 @@ import table3.Table3;
  */
 public class Table3PieChart extends Pane {
 
-    // Team 3 variable--------------------------------------------------------------------------------------------------
+    // Table 3 variables------------------------------------------------------------------------------------------------
     private Table3 table3 = new Table3("", 0, 0, 0, 0, 0, 0);
     private long scrap = table3.getScrap();
     private long pending = table3.getPending();
