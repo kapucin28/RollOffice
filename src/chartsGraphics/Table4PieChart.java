@@ -13,6 +13,10 @@ public class Table4PieChart extends Pane {
 
     // Table 4 variables------------------------------------------------------------------------------------------------
     private Table4 table4 = new Table4("", 0, 0, 0, 0, 0, 0);
+    private long scrap = table4.getScrap();
+    private long pending = table4.getPending();
+    private long output = table4.getOutput();
+    private long target = table4.getTarget();
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
