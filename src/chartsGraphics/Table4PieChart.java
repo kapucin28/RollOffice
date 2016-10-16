@@ -3,6 +3,7 @@ package chartsGraphics;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Rectangle2D;
+import javafx.geometry.Side;
 import javafx.scene.chart.PieChart;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
@@ -41,6 +42,15 @@ public class Table4PieChart extends Pane {
         slicesSetup();
         chartAnimation();
         chartSetup();
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // Chart setup method-----------------------------------------------------------------------------------------------
+    private void chartSetup() {
+        chart.setPrefWidth(bounds.getWidth() / 2 - 100);
+        chart.setPrefHeight(bounds.getHeight() / 2 - 30);
+        chart.setLegendSide(Side.LEFT);
+        chart.setTitle("Performance");
     }
     //------------------------------------------------------------------------------------------------------------------
 
