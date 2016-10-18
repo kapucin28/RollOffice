@@ -1,12 +1,8 @@
 package chartsGraphics;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.geometry.Rectangle2D;
-import javafx.geometry.Side;
+import javafx.animation.*;
+import javafx.collections.*;
+import javafx.geometry.*;
 import javafx.scene.chart.PieChart;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
