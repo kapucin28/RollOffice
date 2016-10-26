@@ -1,11 +1,11 @@
 package main;
 
 import alerts.ExitAlert;
+import interfaces.Scale;
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.stage.*;
+import javafx.stage.Stage;
 
 /**
  * Created by TIMBULI REMUS K@puc!n on 01-Jun-16.
@@ -13,12 +13,11 @@ import javafx.stage.*;
  * The main class where all the objects are
  * displayed on stage
  */
-public class Main extends Application {
+public class Main extends Application implements Scale{
 
     // Layout variables-------------------------------------------------------------------------------------------------
-    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final Pane pane = new Pane();
-    private final Scene scene = new Scene(pane, bounds.getWidth(), bounds.getHeight());
+    private final Scene scene = new Scene(pane, SCREEN_WIDTH, SCREEN_HEIGHT);
     private Stage stage;
     //------------------------------------------------------------------------------------------------------------------
 
