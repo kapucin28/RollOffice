@@ -2,10 +2,12 @@ package main;
 
 import chartsGraphics.*;
 import chartsInfo.ChartsMasterInfo;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.stage.Screen;
+import interfaces.Scale;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import masterTable.MainMasterTable;
 import table1.MainTable1;
 import table2.MainTable2;
@@ -18,7 +20,7 @@ import table4.MainTable4;
  * This is the controller class where all the GUI
  * are organised
  */
-class Controller extends Pane {
+class Controller extends Pane implements Scale{
 
     // TabPane constants------------------------------------------------------------------------------------------------
     private final GridPane tablesGrid = new GridPane();
@@ -39,7 +41,6 @@ class Controller extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Root pane constants----------------------------------------------------------------------------------------------
-    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final GridPane root = new GridPane();
     //------------------------------------------------------------------------------------------------------------------
 
@@ -62,14 +63,14 @@ class Controller extends Pane {
 
     // Charts setup method----------------------------------------------------------------------------------------------
     private void chartsLayoutSetup() {
-        chart1.setPrefHeight(bounds.getHeight() / 2);
-        chart1.setPrefWidth(bounds.getWidth() / 2);
+        chart1.setPrefHeight(SCREEN_HEIGHT / 2);
+        chart1.setPrefWidth(SCREEN_WIDTH / 2);
         chart1.setContent(new ChartsMasterInfo());
-        chart2.setPrefHeight(bounds.getHeight() / 2);
-        chart2.setPrefWidth(bounds.getWidth() / 2);
+        chart2.setPrefHeight(SCREEN_HEIGHT / 2);
+        chart2.setPrefWidth(SCREEN_WIDTH / 2);
         chart2.setContent(new BarChartGraphic());
-        chartsGrid.setPrefHeight(bounds.getHeight() / 2);
-        chartsGrid.setPrefWidth(bounds.getWidth());
+        chartsGrid.setPrefHeight(SCREEN_HEIGHT / 2);
+        chartsGrid.setPrefWidth(SCREEN_WIDTH);
         chartsGrid.add(chart1, 0, 0);
         chartsGrid.add(chart2, 1, 0);
     }
@@ -87,8 +88,8 @@ class Controller extends Pane {
         table2.setContent(new MainTable2());
         table3.setContent(new MainTable3());
         table4.setContent(new MainTable4());
-        tabPane.setPrefHeight(bounds.getHeight() / 2);
-        tabPane.setPrefWidth(bounds.getWidth());
+        tabPane.setPrefHeight(SCREEN_HEIGHT / 2);
+        tabPane.setPrefWidth(SCREEN_WIDTH);
         tabPane.getTabs().addAll(tableMaster, table1, table2, table3, table4);
         tablesGrid.add(tabPane, 0, 0);
     }
