@@ -1,10 +1,14 @@
 package chartsGraphics;
 
-import javafx.animation.*;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.chart.*;
+import interfaces.Scale;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 import javafx.util.Duration;
 
 /**
@@ -13,10 +17,9 @@ import javafx.util.Duration;
  * This is the chart that will display
  * combined results from all pie charts
  */
-public class BarChartGraphic extends Pane {
+public class BarChartGraphic extends Pane implements Scale{
 
     // Pane variables---------------------------------------------------------------------------------------------------
-    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final Pane pane = new Pane();
     //------------------------------------------------------------------------------------------------------------------
 
@@ -97,13 +100,13 @@ public class BarChartGraphic extends Pane {
 
     // Pane setup method------------------------------------------------------------------------------------------------
     private void paneSetup() {
-        barChart.setPrefWidth(bounds.getWidth() / 2);
+        barChart.setPrefWidth(SCREEN_WIDTH / 2);
         barChart.setTitle("Performance");
         xAxis.setLabel("Teams");
         yAxis.setLabel("Performance");
         barChart.getData().addAll(series1, series2, series3, series4);
-        pane.setPrefWidth(bounds.getWidth() / 2);
-        pane.setPrefHeight(bounds.getHeight() / 2);
+        pane.setPrefWidth(SCREEN_WIDTH / 2);
+        pane.setPrefHeight(SCREEN_HEIGHT / 2);
         pane.getChildren().add(barChart);
     }
     //------------------------------------------------------------------------------------------------------------------
