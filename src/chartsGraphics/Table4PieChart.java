@@ -1,11 +1,14 @@
 package chartsGraphics;
 
-import javafx.animation.*;
-import javafx.collections.*;
-import javafx.geometry.*;
+import interfaces.Scale;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Side;
 import javafx.scene.chart.PieChart;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 import javafx.util.Duration;
 import table4.Table4;
 
@@ -15,7 +18,7 @@ import table4.Table4;
  * This chart will represent the performance
  * from team 4
  */
-public class Table4PieChart extends Pane {
+public class Table4PieChart extends Pane implements Scale{
 
     // Table 4 variables------------------------------------------------------------------------------------------------
     private Table4 table4 = new Table4("", 0, 0, 0, 0, 0, 0);
@@ -26,7 +29,6 @@ public class Table4PieChart extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Chart variables--------------------------------------------------------------------------------------------------
-    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final Pane pane = new Pane();
     private PieChart.Data scrapSlice = new PieChart.Data("Scrap", scrap);
     private PieChart.Data pendingSlice = new PieChart.Data("Pending", pending);
@@ -47,12 +49,12 @@ public class Table4PieChart extends Pane {
 
     // Chart setup method-----------------------------------------------------------------------------------------------
     private void chartSetup() {
-        chart.setPrefWidth(bounds.getWidth() / 2 - 100);
-        chart.setPrefHeight(bounds.getHeight() / 2 - 30);
+        chart.setPrefWidth(SCREEN_WIDTH / 2 - 100);
+        chart.setPrefHeight(SCREEN_HEIGHT / 2 - 30);
         chart.setLegendSide(Side.LEFT);
         chart.setTitle("Performance");
-        pane.setPrefWidth(bounds.getWidth() / 2);
-        pane.setPrefHeight(bounds.getHeight() / 2);
+        pane.setPrefWidth(SCREEN_WIDTH / 2);
+        pane.setPrefHeight(SCREEN_HEIGHT / 2);
         pane.getChildren().add(chart);
         getChildren().add(pane);
     }

@@ -17,7 +17,7 @@ import javafx.util.Duration;
  * This is the chart that will display
  * combined results from all pie charts
  */
-public class BarChartGraphic extends Pane implements Scale{
+public class BarChartGraphic extends Pane implements Scale {
 
     // Pane variables---------------------------------------------------------------------------------------------------
     private final Pane pane = new Pane();

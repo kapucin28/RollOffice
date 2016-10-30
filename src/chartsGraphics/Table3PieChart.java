@@ -18,7 +18,7 @@ import table3.Table3;
  * This chart will represent the performance
  * from team 3
  */
-public class Table3PieChart extends Pane implements Scale{
+public class Table3PieChart extends Pane implements Scale {
 
     // Table 3 variables------------------------------------------------------------------------------------------------
     private Table3 table3 = new Table3("", 0, 0, 0, 0, 0, 0);
