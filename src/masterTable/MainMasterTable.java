@@ -1,6 +1,7 @@
 package masterTable;
 
 import alerts.*;
+import interfaces.Scale;
 import javafx.collections.*;
 import javafx.event.Event;
 import javafx.geometry.*;
@@ -18,7 +19,7 @@ import java.io.*;
  * Master table in which the administrative information
  * is stored by the user
  */
-public class MainMasterTable extends Pane {
+public class MainMasterTable extends Pane implements Scale {
 
     // Persons details constants----------------------------------------------------------------------------------------
     private final String name = "name";
@@ -69,7 +70,6 @@ public class MainMasterTable extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Panes variables--------------------------------------------------------------------------------------------------
-    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final GridPane root = new GridPane();
     private final GridPane tableGrid = new GridPane();
     private final GridPane inputGrid = new GridPane();
@@ -103,8 +103,8 @@ public class MainMasterTable extends Pane {
 
         // TableView layout---------------------------------------------------------------------------------------------
         tableView.setItems(list);
-        tableView.setPrefWidth(bounds.getWidth());
-        tableView.setPrefHeight(bounds.getHeight() / 2 - 120);
+        tableView.setPrefWidth(SCREEN_WIDTH);
+        tableView.setPrefHeight(SCREEN_HEIGHT / 2 - 120);
         tableView.getColumns().addAll(nameColumn, surnameColumn, postColumn, IDColumn, teamColumn);
         //--------------------------------------------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ public class MainMasterTable extends Pane {
         // InputGrid layout---------------------------------------------------------------------------------------------
         inputGrid.setVgap(10);
         inputGrid.setHgap(30);
-        inputGrid.setPadding(new Insets(5, bounds.getHeight() / 3, 5, bounds.getHeight() / 3));
+        inputGrid.setPadding(new Insets(5, SCREEN_HEIGHT / 3, 5, SCREEN_HEIGHT / 3));
         inputGrid.add(tfName, 0, 0);
         inputGrid.add(tfSurname, 1, 0);
         inputGrid.add(tfPost, 2, 0);
@@ -127,8 +127,8 @@ public class MainMasterTable extends Pane {
         //--------------------------------------------------------------------------------------------------------------
 
         // Root layout--------------------------------------------------------------------------------------------------
-        root.setPrefWidth(bounds.getWidth());
-        root.setPrefHeight(bounds.getHeight() / 2);
+        root.setPrefWidth(SCREEN_WIDTH);
+        root.setPrefHeight(SCREEN_HEIGHT / 2);
         root.add(tableGrid, 0, 0);
         root.add(inputGrid, 0, 1);
         getChildren().add(root);
