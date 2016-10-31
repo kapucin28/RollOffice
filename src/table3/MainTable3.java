@@ -1,12 +1,18 @@
 package table3;
 
-import alerts.*;
-import javafx.collections.*;
-import javafx.geometry.Rectangle2D;
+import alerts.EmptyAlert;
+import alerts.ExitAlert;
+import alerts.StreamAlert;
+import interfaces.Scale;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.*;
-import javafx.scene.layout.*;
-import javafx.stage.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.converter.LongStringConverter;
 
 import java.io.*;
@@ -17,7 +23,7 @@ import java.io.*;
  * This class represents the table for
  * team 3
  */
-public class MainTable3 extends Pane {
+public class MainTable3 extends Pane implements Scale {
 
     // Persons details constants----------------------------------------------------------------------------------------
     private final String post = "post";
@@ -62,7 +68,6 @@ public class MainTable3 extends Pane {
     //------------------------------------------------------------------------------------------------------------------
 
     // Panes constants--------------------------------------------------------------------------------------------------
-    private final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
     private final GridPane root = new GridPane();
     private final GridPane tableGrid = new GridPane();
     //------------------------------------------------------------------------------------------------------------------
@@ -86,8 +91,8 @@ public class MainTable3 extends Pane {
 
         // TableView layout---------------------------------------------------------------------------------------------
         tableView.setItems(list);
-        tableView.setPrefHeight(bounds.getHeight() / 2);
-        tableView.setPrefWidth(bounds.getWidth());
+        tableView.setPrefHeight(SCREEN_HEIGHT / 2);
+        tableView.setPrefWidth(SCREEN_WIDTH);
         //noinspection unchecked
         tableView.getColumns().addAll(postColumn, scrapColumn, pendingColumn,
                 outputColumn, targetColumn, monthColumn, yearColumn);
@@ -99,8 +104,8 @@ public class MainTable3 extends Pane {
         //--------------------------------------------------------------------------------------------------------------
 
         // Root layout--------------------------------------------------------------------------------------------------
-        root.setPrefWidth(bounds.getWidth());
-        root.setPrefHeight(bounds.getHeight() / 2 - 50);
+        root.setPrefWidth(SCREEN_WIDTH);
+        root.setPrefHeight(SCREEN_HEIGHT / 2 - 50);
         root.add(tableGrid, 0, 0);
         getChildren().add(root);
         //--------------------------------------------------------------------------------------------------------------
