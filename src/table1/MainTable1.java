@@ -3,6 +3,7 @@ package table1;
 import alerts.EmptyAlert;
 import alerts.ExitAlert;
 import alerts.StreamAlert;
+import enums.TableTitles;
 import interfaces.Scale;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,16 +25,6 @@ import java.io.*;
  * team 1
  */
 public class MainTable1 extends Pane implements Scale {
-
-    // Persons details constants----------------------------------------------------------------------------------------
-    private final String post = "post";
-    private final String scrap = "scrap";
-    private final String pending = "pending";
-    private final String output = "output";
-    private final String target = "target";
-    private final String month = "month";
-    private final String year = "year";
-    //------------------------------------------------------------------------------------------------------------------
 
     // Menu constants---------------------------------------------------------------------------------------------------
     private final MenuBar menuBar = new MenuBar();
@@ -129,13 +120,13 @@ public class MainTable1 extends Pane implements Scale {
         monthColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
         yearColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LongStringConverter()));
 
-        postColumn.setCellValueFactory(new PropertyValueFactory<>(post));
-        scrapColumn.setCellValueFactory(new PropertyValueFactory<>(scrap));
-        pendingColumn.setCellValueFactory(new PropertyValueFactory<>(pending));
-        outputColumn.setCellValueFactory(new PropertyValueFactory<>(output));
-        targetColumn.setCellValueFactory(new PropertyValueFactory<>(target));
-        monthColumn.setCellValueFactory(new PropertyValueFactory<>(month));
-        yearColumn.setCellValueFactory(new PropertyValueFactory<>(year));
+        postColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.post.toString()));
+        scrapColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.scrap.toString()));
+        pendingColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.pending.toString()));
+        outputColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.output.toString()));
+        targetColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.target.toString()));
+        monthColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.month.toString()));
+        yearColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.year.toString()));
     }
     //------------------------------------------------------------------------------------------------------------------
 

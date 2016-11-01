@@ -7,6 +7,7 @@ package enums;
  */
 public enum TableTitles {
 
-    name, surname, post, ID, team
+    name, surname, post, ID, team, scrap,
+    pending, output, target, month, year
 
 }
