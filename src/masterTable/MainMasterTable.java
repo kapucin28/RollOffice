@@ -1,6 +1,7 @@
 package masterTable;
 
 import alerts.*;
+import enums.TableTitles;
 import interfaces.Scale;
 import javafx.collections.*;
 import javafx.event.Event;
@@ -20,14 +21,6 @@ import java.io.*;
  * is stored by the user
  */
 public class MainMasterTable extends Pane implements Scale {
-
-    // Persons details constants----------------------------------------------------------------------------------------
-    private final String name = "name";
-    private final String surname = "surname";
-    private final String post = "post";
-    private final String ID = "ID";
-    private final String team = "team";
-    //------------------------------------------------------------------------------------------------------------------
 
     // Menu variables---------------------------------------------------------------------------------------------------
     private final MenuBar menuBar = new MenuBar();
@@ -152,11 +145,11 @@ public class MainMasterTable extends Pane implements Scale {
         IDColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         teamColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>(name));
-        surnameColumn.setCellValueFactory(new PropertyValueFactory<>(surname));
-        postColumn.setCellValueFactory(new PropertyValueFactory<>(post));
-        IDColumn.setCellValueFactory(new PropertyValueFactory<>(ID));
-        teamColumn.setCellValueFactory(new PropertyValueFactory<>(team));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.name.toString()));
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.surname.toString()));
+        postColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.post.toString()));
+        IDColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.ID.toString()));
+        teamColumn.setCellValueFactory(new PropertyValueFactory<>(TableTitles.team.toString()));
 
         nameColumn.setOnEditCommit(this::nameColumnEdit);
         surnameColumn.setOnEditCommit(this::surnameColumnEdit);
