@@ -1,6 +1,7 @@
 package masterTable;
 
 import alerts.*;
+import enums.MenuItemTitle;
 import enums.TableTitles;
 import interfaces.Scale;
 import javafx.collections.*;
@@ -24,13 +25,13 @@ public class MainMasterTable extends Pane implements Scale {
 
     // Menu variables---------------------------------------------------------------------------------------------------
     private final MenuBar menuBar = new MenuBar();
-    private final Menu fileMenu = new Menu("_File");
-    private final Menu editMenu = new Menu("_Edit");
-    private final MenuItem saveTable = new MenuItem("Save As...");
-    private final MenuItem loadTable = new MenuItem("Load...");
-    private final MenuItem refreshTable = new MenuItem("Refresh");
-    private final MenuItem clearTable = new MenuItem("Clear Table");
-    private final MenuItem exit = new MenuItem("Exit");
+    private final Menu fileMenu = new Menu(MenuItemTitle._File.toString());
+    private final Menu editMenu = new Menu(MenuItemTitle._Edit.toString());
+    private final MenuItem saveTable = new MenuItem(MenuItemTitle.SaveAs.toString());
+    private final MenuItem loadTable = new MenuItem(MenuItemTitle.Load.toString());
+    private final MenuItem refreshTable = new MenuItem(MenuItemTitle.Refresh.toString());
+    private final MenuItem clearTable = new MenuItem(MenuItemTitle.ClearTable.toString());
+    private final MenuItem exit = new MenuItem(MenuItemTitle.Exit.toString());
     private final SeparatorMenuItem separator = new SeparatorMenuItem();
     //------------------------------------------------------------------------------------------------------------------
 
