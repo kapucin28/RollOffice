@@ -2,6 +2,7 @@ package masterTable;
 
 import alerts.*;
 import enums.MenuItemTitle;
+import enums.PromptTextTitles;
 import enums.TableTitles;
 import interfaces.Scale;
 import javafx.collections.*;
@@ -82,11 +83,11 @@ public class MainMasterTable extends Pane implements Scale {
     @SuppressWarnings("unchecked")
     private void layoutSetup() {
         // TextField layout---------------------------------------------------------------------------------------------
-        tfName.setPromptText("Name");
-        tfSurname.setPromptText("Surname");
-        tfPost.setPromptText("Post");
-        tfID.setPromptText("ID");
-        tfTeam.setPromptText("Team");
+        tfName.setPromptText(PromptTextTitles.Name.toString());
+        tfSurname.setPromptText(PromptTextTitles.Surname.toString());
+        tfPost.setPromptText(PromptTextTitles.Post.toString());
+        tfID.setPromptText(PromptTextTitles.ID.toString());
+        tfTeam.setPromptText(PromptTextTitles.Team.toString());
         //--------------------------------------------------------------------------------------------------------------
 
         // MenuBar layout-----------------------------------------------------------------------------------------------
