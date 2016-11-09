@@ -3,6 +3,7 @@ package masterTable;
 import alerts.*;
 import enums.MenuItemTitle;
 import enums.PromptTextTitles;
+import enums.TableColumnsTextLink;
 import enums.TableTitles;
 import interfaces.Scale;
 import javafx.collections.*;
@@ -38,11 +39,11 @@ public class MainMasterTable extends Pane implements Scale {
 
     // Table variables--------------------------------------------------------------------------------------------------
     private final TableView<Persons> tableView = new TableView<>();
-    private final TableColumn<Persons, String> nameColumn = new TableColumn<>("Name");
-    private final TableColumn<Persons, String> surnameColumn = new TableColumn<>("Surname");
-    private final TableColumn<Persons, String> postColumn = new TableColumn<>("Post");
-    private final TableColumn<Persons, Integer> IDColumn = new TableColumn<>("ID");
-    private final TableColumn<Persons, Integer> teamColumn = new TableColumn<>("Team");
+    private final TableColumn<Persons, String> nameColumn = new TableColumn<>(TableColumnsTextLink.Name.toString());
+    private final TableColumn<Persons, String> surnameColumn = new TableColumn<>(TableColumnsTextLink.Surname.toString());
+    private final TableColumn<Persons, String> postColumn = new TableColumn<>(TableColumnsTextLink.Post.toString());
+    private final TableColumn<Persons, Integer> IDColumn = new TableColumn<>(TableColumnsTextLink.ID.toString());
+    private final TableColumn<Persons, Integer> teamColumn = new TableColumn<>(TableColumnsTextLink.Team.toString());
     private ObservableList<Persons> list = FXCollections.observableArrayList();
     //------------------------------------------------------------------------------------------------------------------
 
