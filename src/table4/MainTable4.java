@@ -4,6 +4,7 @@ import alerts.EmptyAlert;
 import alerts.ExitAlert;
 import alerts.StreamAlert;
 import enums.MenuItemTitle;
+import enums.TableColumnsTextLink;
 import enums.TableTitles;
 import interfaces.Scale;
 import javafx.collections.FXCollections;
@@ -41,13 +42,13 @@ public class MainTable4 extends Pane implements Scale {
 
     // Table variables--------------------------------------------------------------------------------------------------
     private final TableView<Table4> tableView = new TableView<>();
-    private final TableColumn<Table4, String> postColumn = new TableColumn<>("Post");
-    private final TableColumn<Table4, Long> scrapColumn = new TableColumn<>("Scrap");
-    private final TableColumn<Table4, Long> pendingColumn = new TableColumn<>("Pending");
-    private final TableColumn<Table4, Long> outputColumn = new TableColumn<>("Output");
-    private final TableColumn<Table4, Long> targetColumn = new TableColumn<>("Target");
-    private final TableColumn<Table4, Long> monthColumn = new TableColumn<>("Month");
-    private final TableColumn<Table4, Long> yearColumn = new TableColumn<>("Year");
+    private final TableColumn<Table4, String> postColumn = new TableColumn<>(TableColumnsTextLink.Post.toString());
+    private final TableColumn<Table4, Long> scrapColumn = new TableColumn<>(TableColumnsTextLink.Scrap.toString());
+    private final TableColumn<Table4, Long> pendingColumn = new TableColumn<>(TableColumnsTextLink.Pending.toString());
+    private final TableColumn<Table4, Long> outputColumn = new TableColumn<>(TableColumnsTextLink.Output.toString());
+    private final TableColumn<Table4, Long> targetColumn = new TableColumn<>(TableColumnsTextLink.Target.toString());
+    private final TableColumn<Table4, Long> monthColumn = new TableColumn<>(TableColumnsTextLink.Month.toString());
+    private final TableColumn<Table4, Long> yearColumn = new TableColumn<>(TableColumnsTextLink.Year.toString());
     private ObservableList<Table4> list = FXCollections.observableArrayList();
     //------------------------------------------------------------------------------------------------------------------
 
