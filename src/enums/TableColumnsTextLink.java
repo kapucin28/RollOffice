@@ -2,8 +2,8 @@ package enums;
 
 /**
  * Created by Timbuli Remus on 08.11.2016.
- *
- *      Strings that link table columns to objects
+ * <p>
+ * Strings that link table columns to objects
  */
 public enum TableColumnsTextLink {
 

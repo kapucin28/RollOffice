@@ -20,7 +20,7 @@ import table4.MainTable4;
  * This is the controller class where all the GUI
  * are organised
  */
-class Controller extends Pane implements Scale{
+class Controller extends Pane implements Scale {
 
     // TabPane constants------------------------------------------------------------------------------------------------
     private final GridPane tablesGrid = new GridPane();

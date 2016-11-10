@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  * The main class where all the objects are
  * displayed on stage
  */
-public class Main extends Application implements Scale{
+public class Main extends Application implements Scale {
 
     // Layout variables-------------------------------------------------------------------------------------------------
     private final Pane pane = new Pane();
