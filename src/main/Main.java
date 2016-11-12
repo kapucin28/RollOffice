@@ -1,6 +1,7 @@
 package main;
 
 import alerts.ExitAlert;
+import interfaces.ObjectTitles;
 import interfaces.Scale;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -37,8 +38,8 @@ public class Main extends Application implements Scale {
     // Layout setup method----------------------------------------------------------------------------------------------
     private void layoutSetup() {
         pane.getChildren().add(new Controller());
-        scene.getStylesheets().add(getClass().getResource("CSS.css").toExternalForm());
-        stage.setTitle("Roll Office");
+        scene.getStylesheets().add(getClass().getResource(ObjectTitles.cssFile).toExternalForm());
+        stage.setTitle(ObjectTitles.stageTitle);
         stage.setScene(scene);
         stage.show();
         stage.setOnCloseRequest(e -> {
