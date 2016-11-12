@@ -2,6 +2,7 @@ package main;
 
 import chartsGraphics.*;
 import chartsInfo.ChartsMasterInfo;
+import interfaces.ObjectTitles;
 import interfaces.Scale;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -25,19 +26,19 @@ class Controller extends Pane implements Scale {
     // TabPane constants------------------------------------------------------------------------------------------------
     private final GridPane tablesGrid = new GridPane();
     private final TabPane tabPane = new TabPane();
-    private final Tab tableMaster = new Tab("Master");
-    private final Tab table1 = new Tab("Table 1");
-    private final Tab table2 = new Tab("Table 2");
-    private final Tab table3 = new Tab("Table 3");
-    private final Tab table4 = new Tab("Table 4");
+    private final Tab tableMaster = new Tab(ObjectTitles.tabMaster);
+    private final Tab table1 = new Tab(ObjectTitles.tab1);
+    private final Tab table2 = new Tab(ObjectTitles.tab2);
+    private final Tab table3 = new Tab(ObjectTitles.tab3);
+    private final Tab table4 = new Tab(ObjectTitles.tab4);
     //------------------------------------------------------------------------------------------------------------------
 
     // TitledPane constants---------------------------------------------------------------------------------------------
     private final GridPane chartsGrid = new GridPane();
     private final Pane expansionPane1 = new Pane();
     private final Pane expansionPane2 = new Pane();
-    private final TitledPane chart1 = new TitledPane("Pie Chart", expansionPane1);
-    private final TitledPane chart2 = new TitledPane("Bar Chart", expansionPane2);
+    private final TitledPane chart1 = new TitledPane(ObjectTitles.titledPane1, expansionPane1);
+    private final TitledPane chart2 = new TitledPane(ObjectTitles.titledPane2, expansionPane2);
     //------------------------------------------------------------------------------------------------------------------
 
     // Root pane constants----------------------------------------------------------------------------------------------
@@ -99,23 +100,23 @@ class Controller extends Pane implements Scale {
     private void updateChartSetup() {
         tableMaster.setOnSelectionChanged(e -> {
             chart1.setContent(new ChartsMasterInfo());
-            chart1.setText("Charts Master");
+            chart1.setText(ObjectTitles.updateChart1M);
         });
         table1.setOnSelectionChanged(e -> {
             chart1.setContent(new Table1PieChart());
-            chart1.setText("Table1 Chart");
+            chart1.setText(ObjectTitles.updateChart1);
         });
         table2.setOnSelectionChanged(e -> {
             chart1.setContent(new Table2PieChart());
-            chart1.setText("Table2 Chart");
+            chart1.setText(ObjectTitles.updateChart2);
         });
         table3.setOnSelectionChanged(e -> {
             chart1.setContent(new Table3PieChart());
-            chart1.setText("Table3 Chart");
+            chart1.setText(ObjectTitles.updateChart3);
         });
         table4.setOnSelectionChanged(e -> {
             chart1.setContent(new Table4PieChart());
-            chart1.setText("Table4 Chart");
+            chart1.setText(ObjectTitles.updateChart4);
         });
     }
     //------------------------------------------------------------------------------------------------------------------
