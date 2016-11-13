@@ -5,6 +5,7 @@ import enums.MenuItemTitle;
 import enums.PromptTextTitles;
 import enums.TableColumnsTextLink;
 import enums.TableTitles;
+import interfaces.ObjectTitles;
 import interfaces.Scale;
 import javafx.collections.*;
 import javafx.event.Event;
@@ -61,8 +62,8 @@ public class MainMasterTable extends Pane implements Scale {
     private final TextField tfPost = new TextField();
     private final TextField tfID = new TextField();
     private final TextField tfTeam = new TextField();
-    private final Button addButton = new Button("Add");
-    private final Button removeButton = new Button("Remove");
+    private final Button addButton = new Button(ObjectTitles.addButtonTitle);
+    private final Button removeButton = new Button(ObjectTitles.removeButtonTitle);
     //------------------------------------------------------------------------------------------------------------------
 
     // Panes variables--------------------------------------------------------------------------------------------------
@@ -272,7 +273,9 @@ public class MainMasterTable extends Pane implements Scale {
         saveTable.setOnAction(e -> {
             fileStage = new Stage();
             chooser = new FileChooser();
-            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
+                    ObjectTitles.fileChooserExtensionTitle,
+                    ObjectTitles.fileChooserFileTypes));
             if (list.isEmpty()) {
                 new EmptyAlert();
             } else {
@@ -300,7 +303,9 @@ public class MainMasterTable extends Pane implements Scale {
         loadTable.setOnAction(e -> {
             fileStage = new Stage();
             chooser = new FileChooser();
-            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
+                    ObjectTitles.fileChooserExtensionTitle,
+                    ObjectTitles.fileChooserFileTypes));
             file = chooser.showOpenDialog(fileStage);
             try {
                 fromFile = new ObjectInputStream(new FileInputStream(file));

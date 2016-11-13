@@ -24,4 +24,5 @@ public interface ObjectTitles {
     String addButtonTitle = "Add";
     String removeButtonTitle = "Remove";
     String fileChooserExtensionTitle = "All Files";
+    String fileChooserFileTypes = "*.*";
 }
