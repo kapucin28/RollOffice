@@ -6,6 +6,7 @@ import alerts.StreamAlert;
 import enums.MenuItemTitle;
 import enums.TableColumnsTextLink;
 import enums.TableTitles;
+import interfaces.ObjectTitles;
 import interfaces.Scale;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -168,7 +169,9 @@ public class MainTable4 extends Pane implements Scale {
         saveTable.setOnAction(e -> {
             fileStage = new Stage();
             chooser = new FileChooser();
-            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
+                    ObjectTitles.fileChooserExtensionTitle,
+                    ObjectTitles.fileChooserFileTypes));
             if (list.isEmpty()) {
                 new EmptyAlert();
             } else {
@@ -198,7 +201,9 @@ public class MainTable4 extends Pane implements Scale {
         loadTable.setOnAction(e -> {
             fileStage = new Stage();
             chooser = new FileChooser();
-            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+            chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(
+                    ObjectTitles.fileChooserExtensionTitle,
+                    ObjectTitles.fileChooserFileTypes));
             file = chooser.showOpenDialog(fileStage);
             try {
                 fromFile = new ObjectInputStream(new FileInputStream(file));
