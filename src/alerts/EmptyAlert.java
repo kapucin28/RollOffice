@@ -1,5 +1,6 @@
 package alerts;
 
+import interfaces.AlertsInterface;
 import javafx.scene.control.*;
 import javafx.stage.*;
 
@@ -11,7 +12,7 @@ import javafx.stage.*;
 public class EmptyAlert {
 
     // Alert variable---------------------------------------------------------------------------------------------------
-    private Alert alert = new Alert(Alert.AlertType.WARNING, "Empty Table", ButtonType.CANCEL);
+    private Alert alert = new Alert(Alert.AlertType.WARNING, AlertsInterface.emptyAlertMessage, ButtonType.CANCEL);
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
