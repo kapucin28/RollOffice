@@ -1,5 +1,6 @@
 package alerts;
 
+import interfaces.AlertsInterface;
 import javafx.scene.control.*;
 import javafx.stage.*;
 
@@ -11,7 +12,8 @@ import javafx.stage.*;
 public class ExitAlert {
 
     // Alert variable---------------------------------------------------------------------------------------------------
-    private Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Exit Program", ButtonType.OK, ButtonType.CANCEL);
+    private Alert alert = new Alert(Alert.AlertType.CONFIRMATION, AlertsInterface.exitProgramMessage,
+            ButtonType.OK, ButtonType.CANCEL);
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
