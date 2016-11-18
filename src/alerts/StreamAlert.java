@@ -1,5 +1,6 @@
 package alerts;
 
+import interfaces.AlertsInterface;
 import javafx.scene.control.*;
 import javafx.stage.*;
 
@@ -12,7 +13,8 @@ import javafx.stage.*;
 public class StreamAlert {
 
     // Alert variable---------------------------------------------------------------------------------------------------
-    private Alert alert = new Alert(Alert.AlertType.ERROR, "Stream Error", ButtonType.CANCEL);
+    private Alert alert = new Alert(Alert.AlertType.ERROR,
+            AlertsInterface.streamAlertMessage, ButtonType.CANCEL);
     //------------------------------------------------------------------------------------------------------------------
 
     // Constructor------------------------------------------------------------------------------------------------------
