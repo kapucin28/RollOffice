@@ -1,13 +1,11 @@
 package chartsGraphics;
 
+import interfaces.ChartsTitles;
 import interfaces.Scale;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
@@ -24,11 +22,11 @@ public class BarChartGraphic extends Pane implements Scale {
     //------------------------------------------------------------------------------------------------------------------
 
     // Chart variables--------------------------------------------------------------------------------------------------
-    private final String year1 = "2016";
-    private final String year2 = "2017";
-    private final String year3 = "2018";
-    private final String year4 = "2019";
-    private final String total = "TOTAL";
+    private final String year1 = ChartsTitles.year1;
+    private final String year2 = ChartsTitles.year2;
+    private final String year3 = ChartsTitles.year3;
+    private final String year4 = ChartsTitles.year4;
+    private final String total = ChartsTitles.total;
     private CategoryAxis xAxis = new CategoryAxis();
     private NumberAxis yAxis = new NumberAxis();
 
@@ -67,10 +65,10 @@ public class BarChartGraphic extends Pane implements Scale {
     // Series setup method----------------------------------------------------------------------------------------------
     @SuppressWarnings({"rawtypes", "unchecked"})
     private void seriesSetup() {
-        series1.setName("2016");
-        series2.setName("2017");
-        series3.setName("2018");
-        series4.setName("Overall");
+        series1.setName(ChartsTitles.year1);
+        series2.setName(ChartsTitles.year2);
+        series3.setName(ChartsTitles.year3);
+        series4.setName(ChartsTitles.overall);
 
         series1.getData().add(new XYChart.Data(year1, 1000));
         series1.getData().add(new XYChart.Data(year2, 2000));
@@ -101,9 +99,9 @@ public class BarChartGraphic extends Pane implements Scale {
     // Pane setup method------------------------------------------------------------------------------------------------
     private void paneSetup() {
         barChart.setPrefWidth(SCREEN_WIDTH / 2);
-        barChart.setTitle("Performance");
-        xAxis.setLabel("Teams");
-        yAxis.setLabel("Performance");
+        barChart.setTitle(ChartsTitles.performanceTitle);
+        xAxis.setLabel(ChartsTitles.teamsTitle);
+        yAxis.setLabel(ChartsTitles.performanceTitle);
         barChart.getData().addAll(series1, series2, series3, series4);
         pane.setPrefWidth(SCREEN_WIDTH / 2);
         pane.setPrefHeight(SCREEN_HEIGHT / 2);
