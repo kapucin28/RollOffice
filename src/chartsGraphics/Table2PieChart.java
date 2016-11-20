@@ -1,5 +1,6 @@
 package chartsGraphics;
 
+import interfaces.ChartsTitles;
 import interfaces.Scale;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -30,10 +31,10 @@ public class Table2PieChart extends Pane implements Scale {
 
     // Chart variables--------------------------------------------------------------------------------------------------
     private final Pane pane = new Pane();
-    private PieChart.Data scrapSlice = new PieChart.Data("Scrap", scrap);
-    private PieChart.Data pendingSlice = new PieChart.Data("Pending", pending);
-    private PieChart.Data outputSlice = new PieChart.Data("Output", output);
-    private PieChart.Data targetSlice = new PieChart.Data("Target", target);
+    private PieChart.Data scrapSlice = new PieChart.Data(ChartsTitles.scrapSlice, scrap);
+    private PieChart.Data pendingSlice = new PieChart.Data(ChartsTitles.pendingSlice, pending);
+    private PieChart.Data outputSlice = new PieChart.Data(ChartsTitles.outputSlice, output);
+    private PieChart.Data targetSlice = new PieChart.Data(ChartsTitles.targetSlice, target);
 
     private ObservableList<PieChart.Data> pie = FXCollections.observableArrayList();
     private PieChart chart = new PieChart(pie);
@@ -52,7 +53,7 @@ public class Table2PieChart extends Pane implements Scale {
         chart.setPrefWidth(SCREEN_WIDTH / 2 - 100);
         chart.setPrefHeight(SCREEN_HEIGHT / 2 - 30);
         chart.setLegendSide(Side.LEFT);
-        chart.setTitle("Performance");
+        chart.setTitle(ChartsTitles.performanceTitle);
         pane.setPrefWidth(SCREEN_WIDTH / 2);
         pane.setPrefHeight(SCREEN_HEIGHT / 2);
         pane.getChildren().add(chart);
