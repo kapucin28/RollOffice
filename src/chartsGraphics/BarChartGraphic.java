@@ -22,13 +22,13 @@ public class BarChartGraphic extends Pane implements Scale {
     //------------------------------------------------------------------------------------------------------------------
 
     // Chart variables--------------------------------------------------------------------------------------------------
-    private final String year1 = ChartsTitles.year1;
-    private final String year2 = ChartsTitles.year2;
-    private final String year3 = ChartsTitles.year3;
-    private final String year4 = ChartsTitles.year4;
-    private final String total = ChartsTitles.total;
-    private CategoryAxis xAxis = new CategoryAxis();
-    private NumberAxis yAxis = new NumberAxis();
+    private static final String year1 = ChartsTitles.year1;
+    private static final String year2 = ChartsTitles.year2;
+    private static final String year3 = ChartsTitles.year3;
+    private static final String year4 = ChartsTitles.year4;
+    private static final String total = ChartsTitles.total;
+    private static CategoryAxis xAxis = new CategoryAxis();
+    private static NumberAxis yAxis = new NumberAxis();
 
     private BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
     private XYChart.Series series1 = new XYChart.Series();
