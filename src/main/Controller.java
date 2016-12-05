@@ -47,6 +47,7 @@ class Controller extends Pane implements Scale {
 
     // Constructor------------------------------------------------------------------------------------------------------
     Controller() {
+        CSSSetup();
         updateChartSetup();
         chartsLayoutSetup();
         tabsSetup();
@@ -118,6 +119,24 @@ class Controller extends Pane implements Scale {
             chart1.setContent(new Table4PieChart());
             chart1.setText(ObjectTitles.updateChart4);
         });
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // CSS setup--------------------------------------------------------------------------------------------------------
+    private void CSSSetup() {
+        tablesGrid.getStyleClass().add("tablesGrid");
+        tabPane.getStyleClass().add("tabPane");
+        tableMaster.getStyleClass().add("tableMaster");
+        table1.getStyleClass().add("table1");
+        table2.getStyleClass().add("table2");
+        table3.getStyleClass().add("table3");
+        table4.getStyleClass().add("table4");
+        chartsGrid.getStyleClass().add("chartsGrid");
+        expansionPane1.getStyleClass().add("expansionPane1");
+        expansionPane2.getStyleClass().add("expansionPane2");
+        chart1.getStyleClass().add("chart1");
+        chart2.getStyleClass().add("chart2");
+        root.getStyleClass().add("rootController");
     }
     //------------------------------------------------------------------------------------------------------------------
 }
