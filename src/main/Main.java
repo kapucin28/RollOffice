@@ -38,7 +38,12 @@ public class Main extends Application implements Scale {
     // Layout setup method----------------------------------------------------------------------------------------------
     private void layoutSetup() {
         pane.getChildren().add(new Controller());
+
+        // CSS setup----------------------------------------------------------------------------------------------------
         scene.getStylesheets().add(getClass().getResource(ObjectTitles.cssFile).toExternalForm());
+        pane.getStyleClass().add("mainPane");
+        //--------------------------------------------------------------------------------------------------------------
+
         stage.setTitle(ObjectTitles.stageTitle);
         stage.setScene(scene);
         stage.show();
