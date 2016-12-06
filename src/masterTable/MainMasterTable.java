@@ -324,4 +324,18 @@ public class MainMasterTable extends Pane implements Scale {
         });
     }
     //------------------------------------------------------------------------------------------------------------------
+
+    // CSS setup--------------------------------------------------------------------------------------------------------
+    private void CSSSetup() {
+        menuBar.getStyleClass().add("menuBar");
+        fileMenu.getStyleClass().add("fileMenu");
+        editMenu.getStyleClass().add("editMenu");
+        saveTable.getStyleClass().add("saveTable");
+        loadTable.getStyleClass().add("loadTable");
+        refreshTable.getStyleClass().add("refreshTable");
+        clearTable.getStyleClass().add("clearTable");
+        exit.getStyleClass().add("exit");
+        separator.getStyleClass().add("separatorMasterTable");
+    }
+    //------------------------------------------------------------------------------------------------------------------
 }
