@@ -74,6 +74,7 @@ public class MainMasterTable extends Pane implements Scale {
 
     // Constructor------------------------------------------------------------------------------------------------------
     public MainMasterTable() {
+        CSSSetup();
         layoutSetup();
         tableSetup();
         columnsSetup();
@@ -336,6 +337,12 @@ public class MainMasterTable extends Pane implements Scale {
         clearTable.getStyleClass().add("clearTable");
         exit.getStyleClass().add("exit");
         separator.getStyleClass().add("separatorMasterTable");
+        tableView.getStyleClass().add("tableView");
+        nameColumn.getStyleClass().add("nameColumn");
+        surnameColumn.getStyleClass().add("surnameColumn");
+        postColumn.getStyleClass().add("postColumn");
+        IDColumn.getStyleClass().add("IDColumn");
+        teamColumn.getStyleClass().add("teamColumn");
     }
     //------------------------------------------------------------------------------------------------------------------
 }
