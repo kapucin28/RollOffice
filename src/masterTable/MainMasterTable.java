@@ -348,6 +348,11 @@ public class MainMasterTable extends Pane implements Scale {
         tfPost.getStyleClass().add("tfPost");
         tfID.getStyleClass().add("tfID");
         tfTeam.getStyleClass().add("tfTeam");
+        addButton.getStyleClass().add("addButton");
+        removeButton.getStyleClass().add("removeButton");
+        root.getStyleClass().add("MasterRootPane");
+        tableGrid.getStyleClass().add("tableGrid");
+        inputGrid.getStyleClass().add("inputGrid");
     }
     //------------------------------------------------------------------------------------------------------------------
 }
