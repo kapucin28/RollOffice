@@ -343,6 +343,11 @@ public class MainMasterTable extends Pane implements Scale {
         postColumn.getStyleClass().add("postColumn");
         IDColumn.getStyleClass().add("IDColumn");
         teamColumn.getStyleClass().add("teamColumn");
+        tfName.getStyleClass().add("tfName");
+        tfSurname.getStyleClass().add("tfSurname");
+        tfPost.getStyleClass().add("tfPost");
+        tfID.getStyleClass().add("tfID");
+        tfTeam.getStyleClass().add("tfTeam");
     }
     //------------------------------------------------------------------------------------------------------------------
 }
