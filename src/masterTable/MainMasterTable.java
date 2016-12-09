@@ -1,16 +1,22 @@
 package masterTable;
 
-import alerts.*;
+import alerts.EmptyAlert;
+import alerts.ExitAlert;
+import alerts.StreamAlert;
 import enums.*;
 import interfaces.ObjectTitles;
 import interfaces.Scale;
-import javafx.collections.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
-import javafx.geometry.*;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.*;
-import javafx.scene.layout.*;
-import javafx.stage.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
 import java.io.*;
@@ -335,21 +341,21 @@ public class MainMasterTable extends Pane implements Scale {
         exit.getStyleClass().add(CSSEnum.exit.toString());
         separator.getStyleClass().add(CSSEnum.separatorMasterTable.toString());
         tableView.getStyleClass().add(CSSEnum.tableView.toString());
-        nameColumn.getStyleClass().add("nameColumn");
-        surnameColumn.getStyleClass().add("surnameColumn");
-        postColumn.getStyleClass().add("postColumn");
-        IDColumn.getStyleClass().add("IDColumn");
-        teamColumn.getStyleClass().add("teamColumn");
-        tfName.getStyleClass().add("tfName");
-        tfSurname.getStyleClass().add("tfSurname");
-        tfPost.getStyleClass().add("tfPost");
-        tfID.getStyleClass().add("tfID");
-        tfTeam.getStyleClass().add("tfTeam");
-        addButton.getStyleClass().add("addButton");
-        removeButton.getStyleClass().add("removeButton");
-        root.getStyleClass().add("MasterRootPane");
-        tableGrid.getStyleClass().add("tableGrid");
-        inputGrid.getStyleClass().add("inputGrid");
+        nameColumn.getStyleClass().add(CSSEnum.nameColumn.toString());
+        surnameColumn.getStyleClass().add(CSSEnum.surnameColumn.toString());
+        postColumn.getStyleClass().add(CSSEnum.postColumn.toString());
+        IDColumn.getStyleClass().add(CSSEnum.IDColumn.toString());
+        teamColumn.getStyleClass().add(CSSEnum.teamColumn.toString());
+        tfName.getStyleClass().add(CSSEnum.tfName.toString());
+        tfSurname.getStyleClass().add(CSSEnum.tfSurname.toString());
+        tfPost.getStyleClass().add(CSSEnum.tfPost.toString());
+        tfID.getStyleClass().add(CSSEnum.tfID.toString());
+        tfTeam.getStyleClass().add(CSSEnum.tfTeam.toString());
+        addButton.getStyleClass().add(CSSEnum.addButton.toString());
+        removeButton.getStyleClass().add(CSSEnum.removeButton.toString());
+        root.getStyleClass().add(CSSEnum.MasterRootPane.toString());
+        tableGrid.getStyleClass().add(CSSEnum.tableGrid.toString());
+        inputGrid.getStyleClass().add(CSSEnum.inputGrid.toString());
     }
     //------------------------------------------------------------------------------------------------------------------
 }
