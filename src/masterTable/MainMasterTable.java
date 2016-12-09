@@ -1,10 +1,7 @@
 package masterTable;
 
 import alerts.*;
-import enums.MenuItemTitle;
-import enums.PromptTextTitles;
-import enums.TableColumnsTextLink;
-import enums.TableTitles;
+import enums.*;
 import interfaces.ObjectTitles;
 import interfaces.Scale;
 import javafx.collections.*;
@@ -328,16 +325,16 @@ public class MainMasterTable extends Pane implements Scale {
 
     // CSS setup--------------------------------------------------------------------------------------------------------
     private void CSSSetup() {
-        menuBar.getStyleClass().add("menuBar");
-        fileMenu.getStyleClass().add("fileMenu");
-        editMenu.getStyleClass().add("editMenu");
-        saveTable.getStyleClass().add("saveTable");
-        loadTable.getStyleClass().add("loadTable");
-        refreshTable.getStyleClass().add("refreshTable");
-        clearTable.getStyleClass().add("clearTable");
-        exit.getStyleClass().add("exit");
-        separator.getStyleClass().add("separatorMasterTable");
-        tableView.getStyleClass().add("tableView");
+        menuBar.getStyleClass().add(CSSEnum.menuBar.toString());
+        fileMenu.getStyleClass().add(CSSEnum.fileMenu.toString());
+        editMenu.getStyleClass().add(CSSEnum.editMenu.toString());
+        saveTable.getStyleClass().add(CSSEnum.saveTable.toString());
+        loadTable.getStyleClass().add(CSSEnum.loadTable.toString());
+        refreshTable.getStyleClass().add(CSSEnum.refreshTable.toString());
+        clearTable.getStyleClass().add(CSSEnum.clearTable.toString());
+        exit.getStyleClass().add(CSSEnum.exit.toString());
+        separator.getStyleClass().add(CSSEnum.separatorMasterTable.toString());
+        tableView.getStyleClass().add(CSSEnum.tableView.toString());
         nameColumn.getStyleClass().add("nameColumn");
         surnameColumn.getStyleClass().add("surnameColumn");
         postColumn.getStyleClass().add("postColumn");
