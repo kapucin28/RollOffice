@@ -1,5 +1,6 @@
 package chartsGraphics;
 
+import enums.CSSEnum;
 import interfaces.ChartsTitles;
 import interfaces.Scale;
 import javafx.animation.Animation;
@@ -112,10 +113,10 @@ public class BarChartGraphic extends Pane implements Scale {
 
     // CSS style method-------------------------------------------------------------------------------------------------
     private void CSSStyle() {
-        xAxis.getStyleClass().add("xAxisStyle");
-        yAxis.getStyleClass().add("YAxisStyle");
-        barChart.getStyleClass().add("barChartStyle");
-        pane.getStyleClass().add("barChartPane");
+        xAxis.getStyleClass().add(CSSEnum.xAxisStyle.toString());
+        yAxis.getStyleClass().add(CSSEnum.yAxisStyle.toString());
+        barChart.getStyleClass().add(CSSEnum.barChartStyle.toString());
+        pane.getStyleClass().add(CSSEnum.barChartPane.toString());
     }
     //------------------------------------------------------------------------------------------------------------------
 }
