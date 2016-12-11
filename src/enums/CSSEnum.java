@@ -11,6 +11,8 @@ public enum CSSEnum {
     refreshTable, clearTable, exit, separatorMasterTable, tableView,
     nameColumn, surnameColumn, postColumn, IDColumn, teamColumn,
     tfName, tfSurname, tfPost, tfID, tfTeam, addButton, removeButton,
-    MasterRootPane, tableGrid, inputGrid
+    MasterRootPane, tableGrid, inputGrid,
+
+    xAxisStyle, yAxisStyle, barChartStyle, barChartPane
 
 }
