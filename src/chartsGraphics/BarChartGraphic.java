@@ -39,6 +39,7 @@ public class BarChartGraphic extends Pane implements Scale {
 
     // Constructor------------------------------------------------------------------------------------------------------
     public BarChartGraphic() {
+        CSSStyle();
         chartAnimation();
         seriesSetup();
         paneSetup();
@@ -106,6 +107,15 @@ public class BarChartGraphic extends Pane implements Scale {
         pane.setPrefWidth(SCREEN_WIDTH / 2);
         pane.setPrefHeight(SCREEN_HEIGHT / 2);
         pane.getChildren().add(barChart);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // CSS style method-------------------------------------------------------------------------------------------------
+    private void CSSStyle() {
+        xAxis.getStyleClass().add("xAxisStyle");
+        yAxis.getStyleClass().add("YAxisStyle");
+        barChart.getStyleClass().add("barChartStyle");
+        pane.getStyleClass().add("barChartPane");
     }
     //------------------------------------------------------------------------------------------------------------------
 }

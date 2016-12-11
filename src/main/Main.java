@@ -1,6 +1,7 @@
 package main;
 
 import alerts.ExitAlert;
+import enums.CSSEnum;
 import interfaces.ObjectTitles;
 import interfaces.Scale;
 import javafx.application.Application;
@@ -41,7 +42,7 @@ public class Main extends Application implements Scale {
 
         // CSS setup----------------------------------------------------------------------------------------------------
         scene.getStylesheets().add(getClass().getResource(ObjectTitles.cssFile).toExternalForm());
-        pane.getStyleClass().add("mainPane");
+        pane.getStyleClass().add(CSSEnum.mainPane.toString());
         //--------------------------------------------------------------------------------------------------------------
 
         stage.setTitle(ObjectTitles.stageTitle);
