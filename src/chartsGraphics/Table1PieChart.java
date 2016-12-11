@@ -42,6 +42,7 @@ public class Table1PieChart extends Pane implements Scale {
 
     // Constructor------------------------------------------------------------------------------------------------------
     public Table1PieChart() {
+        CSSSetup();
         slicesSetup();
         chartAnimation();
         chartSetup();
@@ -78,6 +79,13 @@ public class Table1PieChart extends Pane implements Scale {
     // Pie slices method------------------------------------------------------------------------------------------------
     private void slicesSetup() {
         pie.addAll(scrapSlice, pendingSlice, outputSlice, targetSlice);
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+    // CSS setup method-------------------------------------------------------------------------------------------------
+    private void CSSSetup() {
+        pane.getStyleClass().add("pieChartPane");
+        chart.getStyleClass().add("pieChart1");
     }
     //------------------------------------------------------------------------------------------------------------------
 }
